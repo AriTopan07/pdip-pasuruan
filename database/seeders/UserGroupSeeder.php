@@ -24,6 +24,11 @@ class UserGroupSeeder extends Seeder
                 'id' => 2,
                 'user_id' => 2,
                 'group_id' => 2,
+            ],
+            [
+                'id' => 3,
+                'user_id' => 3,
+                'group_id' => 3,
             ]
         ]);
     }

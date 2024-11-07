@@ -9,7 +9,8 @@ use App\Http\Repository\MenuRepository;
 class MenuController extends Controller
 {
     protected $menu;
-    public function __construct(MenuRepository $menu) {
+    public function __construct(MenuRepository $menu)
+    {
         $this->menu = $menu;
     }
     /**

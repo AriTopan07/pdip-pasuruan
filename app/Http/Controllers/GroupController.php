@@ -6,23 +6,33 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use App\Http\Repository\GroupRepository;
 use App\Models\Group;
+use App\Http\Repository\PermissionRepository;
 use App\Models\UserGroup;
+use Illuminate\Support\Facades\Auth;
 
 class GroupController extends Controller
 {
-    protected $group;
+    protected $group, $permission;
 
-    public function __construct(GroupRepository $group)
+    public function __construct(GroupRepository $group, PermissionRepository $permission)
     {
         $this->group = $group;
-        $this->middleware(function ($request, $next){
-            Session::put('menu_active','/group');
+        $this->permission = $permission;
+        $this->middleware(function ($request, $next) {
+            if ($request->is('group')) {
+                Session::put('menu_active', '/group');
+            } elseif ($request->is('permission')) {
+                Session::put('menu_active', '/group');
+            }
             return $next($request);
         });
     }
 
     public function index()
     {
+        // if ($this->permission->cekAkses(Auth::user()->id, "Group", "view") !== true) {
+        //     return view('error.403');
+        // }
         $data = $this->group->group();
         return view('page.permissions.group', compact('data'));
     }
@@ -46,9 +56,11 @@ class GroupController extends Controller
 
         $this->group->store($request);
 
+        session()->flash('success', 'Sukses menambah data');
+
         return response()->json([
             'success' => TRUE,
-            'message' => 'Berhasil menambah data!'
+            // 'message' => 'Berhasil menambah data!'
         ]);
     }
 
@@ -60,10 +72,11 @@ class GroupController extends Controller
         ]);
 
         $data = $this->group->update($request, $id);
+        session()->flash('success', 'Sukses memperbarui data');
 
         return response()->json([
             'success' => true,
-            'message' => 'Data Group berhasil diperbarui.',
+            // 'message' => 'Data Group berhasil diperbarui.',
             'data' => $data,
         ]);
     }

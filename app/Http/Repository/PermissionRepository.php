@@ -58,8 +58,10 @@ class PermissionRepository
             // Nyalakan
             foreach ($master_action as $key => $value) {
                 $master = DB::table('actions')
-                    ->where('menu_id', $menu_id)
-                    ->where('master_action_id', $value->id)
+                    ->join('action_groups', 'action_groups.action_id', '=', 'actions.id')
+                    ->where('actions.menu_id', $menu_id)
+                    ->where('actions.master_action_id', $value->id)
+                    ->where('action_groups.group_id', $group_id)
                     ->first();
 
                 if (!$master) {
@@ -68,7 +70,7 @@ class PermissionRepository
                             'menu_id' => $menu_id,
                             'master_action_id' => $value->id
                         ]);
-    
+
                     if ($actionId) {
                         DB::table('action_groups')
                             ->insert([
@@ -77,13 +79,35 @@ class PermissionRepository
                             ]);
                     }
                 }
-
-            }            
-        }else{
+            }
+        } else {
             // Matikan
             DB::table('actions')
                 ->where('menu_id', $menu_id)
                 ->delete();
         }
+    }
+
+    public function cekAkses($user_id, $menu_name, $action_name)
+    {
+        $cekAkses = DB::table('users')
+            ->join('user_groups', 'users.id', '=', 'user_groups.user_id')
+            ->join('groups', 'user_groups.group_id', '=', 'groups.id')
+            ->join('action_groups', 'groups.id', '=', 'action_groups.group_id')
+            ->join('actions', 'action_groups.action_id', '=', 'actions.id')
+            ->join('menus', 'actions.menu_id', '=', 'menus.id') // Ganti 'menu_sections' menjadi 'menus'
+            ->join('menu_sections', 'menus.section_id', '=', 'menu_sections.id')
+            ->join('master_actions', 'actions.master_action_id', '=', 'master_actions.id')
+            ->select('menus.id') // Ganti 'menu_sections.id' menjadi 'menus.id'
+            ->where([
+                'users.id' => $user_id,
+                'menus.name_menu' => $menu_name, // Ganti 'menu_sections.name_section' menjadi 'menus.name_menu'
+                'master_actions.name' => $action_name,
+            ])
+            ->first();
+
+        // dd($cekAkses);
+
+        return $cekAkses !== null;
     }
 }

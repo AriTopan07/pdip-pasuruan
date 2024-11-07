@@ -13,7 +13,7 @@ class MenuSeeder extends Seeder
      * @return void
      */
     public function run()
-    {   
+    {
         DB::table('menus')
             ->insert([
                 'parent_id' => 0,
@@ -24,11 +24,11 @@ class MenuSeeder extends Seeder
                 'order' => 1,
                 'status' => 'active',
             ]);
-        
+
         DB::table('menus')
             ->insert([
                 'parent_id' => 0,
-                'section_id' => 2,
+                'section_id' => 1,
                 'name_menu' => 'Group',
                 'url' => '/group',
                 'icons' => '',
@@ -39,11 +39,11 @@ class MenuSeeder extends Seeder
         DB::table('menus')
             ->insert([
                 'parent_id' => 0,
-                'section_id' => 2,
+                'section_id' => 1,
                 'name_menu' => 'Create Section',
                 'url' => '/create-section',
                 'icons' => '',
-                'order' => 2,
+                'order' => 1,
                 'status' => 'active',
             ]);
 
@@ -51,21 +51,10 @@ class MenuSeeder extends Seeder
             ->insert([
                 'parent_id' => 0,
                 'section_id' => 2,
-                'name_menu' => 'Aksi',
-                'url' => '/action',
+                'name_menu' => 'Form Tambah Data',
+                'url' => '/form-tambah-data',
                 'icons' => '',
-                'order' => 3,
-                'status' => 'active',
-            ]);
-
-        DB::table('menus')
-            ->insert([
-                'parent_id' => 0,
-                'section_id' => 2,
-                'name_menu' => 'Tombol',
-                'url' => '/button',
-                'icons' => '',
-                'order' => 4,
+                'order' => 1,
                 'status' => 'active',
             ]);
     }

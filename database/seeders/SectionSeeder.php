@@ -16,19 +16,18 @@ class SectionSeeder extends Seeder
     {
         DB::table('menu_sections')
             ->insert([
-                'name_section' => 'Users',
-                'order' => 4,
-                'icons' => 'people',
-                'status' => 'active',
-            ]);
-            
-        DB::table('menu_sections')
-        ->insert([
-            'name_section' => 'Settings',
-                'order' => 8,
+                'name_section' => 'Settings',
+                'order' => 1,
                 'icons' => 'file-earmark-bar-graph',
                 'status' => 'active',
             ]);
-            
+
+        DB::table('menu_sections')
+            ->insert([
+                'name_section' => 'Tambah Data',
+                'order' => 1,
+                'icons' => 'file-earmark-bar-graph',
+                'status' => 'active',
+            ]);
     }
 }

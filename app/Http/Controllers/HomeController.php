@@ -2,21 +2,25 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\GoodsReceive;
+use App\Models\Group;
+use App\Models\UserGroup;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
     /**
      * Create a new controller instance.
      *
-     * @return void 
+     * @return void
      */
     public function __construct()
     {
         $this->middleware('auth');
-        $this->middleware(function ($request, $next){
-            Session::put('menu_active','/');
+        $this->middleware(function ($request, $next) {
+            Session::put('menu_active', '/home');
             return $next($request);
         });
     }
@@ -30,5 +34,4 @@ class HomeController extends Controller
     {
         return view('home');
     }
-    
 }

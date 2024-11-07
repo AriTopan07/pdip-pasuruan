@@ -1,11 +1,13 @@
 <?php
+
 namespace App\Http\Repository;
 
 use App\Models\Menu;
 use Illuminate\Support\Facades\Auth;
 use DB;
 
-class MenuRepository{
+class MenuRepository
+{
     protected $menu;
 
     public function __construct(Menu $menu)
@@ -16,10 +18,10 @@ class MenuRepository{
     public function get_all_menu()
     {
         return DB::table('menus')
-                ->select('id', 'name_menu', 'url', 'section_id', 'icons', 'order')
-                ->where('status', 'active')
-                ->orderBy('order', 'ASC')
-                ->get();
+            ->select('id', 'name_menu', 'url', 'section_id', 'icons', 'order')
+            ->where('status', 'active')
+            ->orderBy('order', 'ASC')
+            ->get();
     }
 
     public function get_menu($id)
@@ -36,16 +38,15 @@ class MenuRepository{
     {
         $menu = DB::table('menus')->where('section_id', $request->section_id)->orderBy('order', 'DESC')->first();
         return DB::table('menus')
-                ->insert([
-                    'group_id' => 1,
-                    'parent_id' => $request->parent_id,
-                    'section_id' => $request->section_id,
-                    'name_menu' => $request->name_menu,
-                    'url' => $request->url,
-                    'icons' => '',
-                    'order' => ($menu != NULL) ? $menu->order + 1 : 1,
-                    'status' => 'active'
-                ]);
+            ->insert([
+                'parent_id' => $request->parent_id,
+                'section_id' => $request->section_id,
+                'name_menu' => $request->name_menu,
+                'url' => $request->url,
+                'icons' => '',
+                'order' => ($menu != NULL) ? $menu->order + 1 : 1,
+                'status' => 'active'
+            ]);
     }
 
     public function update($request, $id)
@@ -58,7 +59,7 @@ class MenuRepository{
                 'parent_id' => $request->parent_id,
                 'status' => 'active'
             ]);
-        }else{
+        } else {
             return DB::table('menus')->where('id', $id)->update([
                 'name_menu' => $request->name_menu,
                 'url' => $request->url,

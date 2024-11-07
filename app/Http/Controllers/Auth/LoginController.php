@@ -52,22 +52,22 @@ class LoginController extends Controller
             'username' => 'required',
             'password' => 'required',
         ]);
-   
+
         $credentials = $request->only('username', 'password');
         if (Auth::attempt($credentials)) {
             return redirect()->intended('/')
-            ->with('message', ['type' => 'success','content' => 'Login Berhasil']);
+                ->with('message', ['type' => 'success', 'content' => 'Login Berhasil']);
         }
-  
+
         return redirect("login")
-        ->with('message', ['type' => 'error','content' => 'Username / Password salah!']);
+            ->with('message', ['type' => 'error', 'content' => 'Username / Password salah!']);
     }
 
     public function logout()
     {
         Session::flush();
         Auth::logout();
-  
+
         return Redirect('login');
     }
 }

@@ -8,29 +8,46 @@
             <section class="section">
                 <div class="card">
                     <div class="card-header">
-                        <a href="/create-section">Back</a>
+                        <a href="/create-section" class="btn btn-secondary mb-3">
+                            <i class="bi bi-arrow-left"></i>
+                        </a>
                         <h4>Section {{ $data->name_section }}</h4>
                     </div>
                     <div class="card-body">
                         <form action="/section/update/{{ $data->id }}" method="post">
                             @csrf
-                            <label>Nama Section</label>
-                            <div class="form-group">
-                                <input type="text" placeholder="Nama Section" class="form-control" name="name_section" required value="{{ $data->name_section }}">
+                            <div class="row">
+                                <label>Section</label>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" placeholder="Nama Section" class="form-control"
+                                            name="name_section" required value="{{ $data->name_section }}">
+                                    </div>
+                                </div>
                             </div>
-                            <div id="form-icon"></div>
-                            <div class="form-group">
-                                <i id="selected-icon" class="bi bi-{{ $data->icons }}"></i>
-                                <a href="#" onclick="modalIcon()" class="btn btn-secondary btn-sm ms-2">Pilih Icon</a>
+                            <div class="row">
+                                <label>Status</label>
+                                <div class="col-lg-6">
+                                    <div class="form-check form-switch">
+                                        <input style="font-size: 30px" class="form-check-input ms-2" type="checkbox"
+                                            name="status" value="active" role="switch" id="status"
+                                            {{ $data->status === 'active' ? 'checked' : '' }}>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <i id="selected-icon" class="bi bi-{{ $data->icons }}"
+                                            style="font-size: 100px"></i>
+                                        <a href="#" onclick="modalIcon()" class="btn btn-secondary btn-sm ms-2">Pilih
+                                            Icon</a>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="form-check form-switch">
-                                <input class="form-check-input" type="checkbox" name="status" value="active" role="switch" id="status" {{ ($data->status === 'active') ? 'checked' : '' }}>
-                                <label class="form-check-label" for="status">Status</label>
-                            </div>
-                            <button type="submit" class="btn btn-primary mb-4">Simpan</button>
+
+                            <button type="submit" class="btn btn-primary mb-4 mt-4">Submit</button>
                         </form>
 
-                        <button class="btn btn-primary btn-sm mb-4" onclick="addModal()">Tambah Menu</button>
+                        <button class="btn btn-primary btn-sm mb-4" onclick="addModal()">Add Menu</button>
                         <table class="table table-striped" id="table1">
                             <thead>
                                 <tr>
@@ -49,8 +66,9 @@
                                         <td>{{ $m->order }}</td>
                                         <td>{{ $m->status }}</td>
                                         <td>
-                                            {!! NavHelper::action('tabel', $m->id) !!}
-                                            {{-- <button class="btn btn-warning btn-sm" onclick="detail({{ $m->id }})">Edit</button> --}}
+                                            <button class="btn btn-primary btn-sm" onclick="detail({{ $m->id }})">
+                                                <i class="bi bi-pencil"></i>
+                                            </button>
                                         </td>
                                     </tr>
                                 @endforeach
@@ -101,17 +119,20 @@
                                 <div class="col">
                                     <label>Nama Menu</label>
                                     <div class="form-group">
-                                        <input type="text" placeholder="Nama Menu" class="form-control" id="name_menu" name="name_menu" required>
+                                        <input type="text" placeholder="Nama Menu" class="form-control" id="name_menu"
+                                            name="name_menu" required>
                                     </div>
                                     <label>Url</label>
                                     <div class="form-group">
-                                        <input type="text" placeholder="URL" class="form-control" id="url" name="url" required>
+                                        <input type="text" placeholder="URL" class="form-control" id="url"
+                                            name="url" required>
                                     </div>
                                     <label for="">Section</label>
                                     <div class="form-group">
                                         <select class="form-select" name="section_id" id="section_id">
                                             @foreach ($section as $item)
-                                                <option {{ ($item->id === $data->id) ? 'selected' : '' }} value="{{ $item->id }}">{{ $item->name_section }}</option>
+                                                <option {{ $item->id === $data->id ? 'selected' : '' }}
+                                                    value="{{ $item->id }}">{{ $item->name_section }}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -125,7 +146,8 @@
                                         </select>
                                     </div>
                                     <div class="form-check form-switch">
-                                        <input class="form-check-input" type="checkbox" name="status" value="active" role="switch" id="status-act" >
+                                        <input class="form-check-input" type="checkbox" name="status" value="active"
+                                            role="switch" id="status-act">
                                         <label class="form-check-label" for="status">Status</label>
                                     </div>
                                 </div>
@@ -164,11 +186,13 @@
                                 <div class="col">
                                     <label>Nama Menu</label>
                                     <div class="form-group">
-                                        <input type="text" placeholder="Nama Menu" class="form-control" id="name_menu" name="name_menu" required>
+                                        <input type="text" placeholder="Nama Menu" class="form-control"
+                                            id="name_menu" name="name_menu" required>
                                     </div>
                                     <label>Url</label>
                                     <div class="form-group">
-                                        <input type="text" placeholder="URL" class="form-control" id="url" name="url" required>
+                                        <input type="text" placeholder="URL" class="form-control" id="url"
+                                            name="url" required>
                                     </div>
                                     <input type="hidden" name="section_id" value="{{ $data->id }}">
                                     <label for="">Parent</label>
@@ -206,7 +230,7 @@
                     $('#modal-icon').modal('toggle')
                     $('#selected-icon').attr('class', `bi bi-${icon}`)
                     $('#form-icon').html(`<input type="hidden" name="icons" value="${icon}">`)
-                }else{
+                } else {
                     $('#modal-icon').modal('show')
                 }
             }
@@ -228,7 +252,7 @@
                 parent_id.val(data.payload.parent_id)
                 if (data.payload.status === 'active') {
                     status.attr('checked', true)
-                }else if (data.payload.status === 'inactive'){
+                } else if (data.payload.status === 'inactive') {
                     status.attr('checked', false)
                 }
                 formEditMenu.attr('action', `/menu/update/${id}`)
