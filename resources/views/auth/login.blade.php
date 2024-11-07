@@ -56,8 +56,12 @@
                                 </div>
                                 <button class="btn btn-primary btn-block btn-md shadow-md mt-4">Login</button>
                             </form>
+                            <h6 class="mt-4">
+                                <a href="{{ route('account.register') }}">Buat akun</a>
+                            </h6>
                         </div>
                     </div>
+                    <p>&copy; PAC PIDP Kab. Pasuruan 2024</p>
                 </div>
             </div>
         </div>

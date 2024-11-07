@@ -70,4 +70,9 @@ class LoginController extends Controller
 
         return Redirect('login');
     }
+
+    public function register()
+    {
+        return view('auth.register');
+    }
 }

@@ -20,6 +20,8 @@ Route::get('login', [LoginController::class, 'login']);
 Route::post('login', [LoginController::class, 'check_login'])->name('login');
 Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 
+Route::get('/account/register', [LoginController::class, 'register'])->name('account.register');
+
 // URL::forceScheme('https');
 Route::middleware(['auth'])->group(function () {
     Route::get('/', [HomeController::class, 'index'])->name('home.index');
