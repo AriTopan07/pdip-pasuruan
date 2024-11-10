@@ -64,4 +64,5 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/form-tambah-data', [FormController::class, 'view'])->name('formulir.view');
     Route::post('/form-tambah-data', [FormController::class, 'store'])->name('formulir.store');
+    Route::get('/view-data', [FormController::class, 'data']);
 });

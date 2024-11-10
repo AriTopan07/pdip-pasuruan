@@ -29,7 +29,21 @@ return [
     */
 
     'disks' => [
-
+        'biznet' => [
+            'driver' => 's3',
+            'key' => env('BIZNET_ACCESS_KEY_ID'),
+            'secret' => env('BIZNET_SECRET_ACCESS_KEY'),
+            'region' => env('BIZNET_DEFAULT_REGION', 'idn'),
+            'bucket' => env('BIZNET_BUCKET'),
+            'endpoint' => env('BIZNET_ENDPOINT'),
+            'use_path_style_endpoint' => true,
+            'options' => [
+                'curl.options' => [
+                    CURLOPT_SSL_VERIFYPEER => false,
+                    CURLOPT_SSL_VERIFYHOST => false,
+                ],
+            ],
+        ],
         'local' => [
             'driver' => 'local',
             'root' => storage_path('app'),

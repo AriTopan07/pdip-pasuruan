@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Storage;
 
 class FormController extends Controller
 {
@@ -51,7 +52,12 @@ class FormController extends Controller
             $uploadedFiles = [];
             foreach (['foto_ktp', 'foto_diri'] as $fileField) {
                 if ($request->hasFile($fileField)) {
-                    $uploadedFiles[$fileField] = $request->file($fileField)->store('files/data_diri', 'public');
+                    // Simpan file ke disk 'biznet'
+                    $file = $request->file($fileField);
+                    $path = Storage::disk('biznet')->put("files/data_diri", $file);
+    
+                    // Simpan path dari file yang berhasil diunggah
+                    $uploadedFiles[$fileField] = $path;
                 }
             }
 
@@ -78,5 +84,10 @@ class FormController extends Controller
                 'message' => 'Terjadi kesalahan saat menambahkan data: ' . $th->getMessage()
             ]);
         }
+    }
+
+    public function data()
+    {
+        
     }
 }
