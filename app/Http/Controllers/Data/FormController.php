@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class FormController extends Controller
 {
@@ -52,14 +53,27 @@ class FormController extends Controller
             $uploadedFiles = [];
             foreach (['foto_ktp', 'foto_diri'] as $fileField) {
                 if ($request->hasFile($fileField)) {
-                    // Simpan file ke disk 'biznet'
+                    // Ambil nama lengkap dari request dan buat slug untuk nama file
+                    $namaLengkap = Str::slug($request->nama_lengkap); // Mengubah nama menjadi format yang aman untuk URL/filename
+
+                    // Simpan file ke disk 'biznet' dengan nama file yang dihasilkan
                     $file = $request->file($fileField);
-                    $path = Storage::disk('biznet')->put("files/data_diri", $file);
-    
+                    $fileName = $namaLengkap . '_' . time() . '.' . $file->getClientOriginalExtension(); // Gabungkan nama lengkap dengan timestamp untuk membuat nama file unik
+                    $result = Storage::disk('biznet')->putFileAs('files/data_diri', $file, $fileName);
+
+                    // Ambil URL file yang telah diunggah
+                    $path = Storage::disk('biznet')->url($result); // Pastikan untuk mendapatkan URL file yang benar
+
                     // Simpan path dari file yang berhasil diunggah
                     $uploadedFiles[$fileField] = $path;
                 }
             }
+
+            // foreach (['foto_ktp', 'foto_diri'] as $fileField) {
+            //     if ($request->hasFile($fileField)) {
+            //         $uploadedFiles[$fileField] = $request->file($fileField)->store('files/data_diri', 'public');
+            //     }
+            // }
 
             $data = DataDiri::create([
                 'kecamatan' => $request->kecamatan,
@@ -86,8 +100,5 @@ class FormController extends Controller
         }
     }
 
-    public function data()
-    {
-        
-    }
+    public function data() {}
 }

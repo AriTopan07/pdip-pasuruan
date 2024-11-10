@@ -234,10 +234,10 @@
                         submitButton.html('Submit');
 
                         if (data['success'] === true) {
+                            window.location.reload();
                             $('.invalid-feedback').removeClass('invalid-feedback').html('');
                             $("input[type='text'], select, input[type='number'], input[type='file'], textarea")
                                 .removeClass('is-invalid');
-                            window.location.reload();
                         } else {
                             $('.invalid-feedback').removeClass('invalid-feedback').html('');
                             $("input[type='text'], select, input[type='number'], input[type='file'], textarea")
