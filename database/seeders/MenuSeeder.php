@@ -51,6 +51,17 @@ class MenuSeeder extends Seeder
             ->insert([
                 'parent_id' => 0,
                 'section_id' => 2,
+                'name_menu' => 'Data',
+                'url' => '/view/data',
+                'icons' => '',
+                'order' => 1,
+                'status' => 'active',
+            ]);
+
+        DB::table('menus')
+            ->insert([
+                'parent_id' => 0,
+                'section_id' => 2,
                 'name_menu' => 'Form Tambah Data',
                 'url' => '/form-tambah-data',
                 'icons' => '',
