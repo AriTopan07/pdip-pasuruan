@@ -92,7 +92,7 @@
             data: {
                 labels: kecamatanLabels,
                 datasets: [{
-                    label: 'Jumlah Data',
+                    label: 'Jumlah Data per Kecamatan',
                     data: kecamatanValues,
                     backgroundColor: 'rgba(255, 0, 0, 0.6)',
                     borderWidth: 1

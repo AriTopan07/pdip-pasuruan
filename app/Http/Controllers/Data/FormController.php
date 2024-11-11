@@ -22,6 +22,13 @@ class FormController extends Controller
         });
     }
 
+    public function data()
+    {
+        $data = DataDiri::get();
+
+        return view('data.form.index', compact('data'));
+    }
+
     public function view()
     {
         return view('data.form.view');
@@ -99,6 +106,4 @@ class FormController extends Controller
             ]);
         }
     }
-
-    public function data() {}
 }
