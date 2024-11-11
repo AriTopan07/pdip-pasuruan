@@ -21,8 +21,11 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-      'name', 'username', 'password','status'
-  ];
+        'name',
+        'username',
+        'password',
+        'status'
+    ];
 
     /**
      * The attributes that should be hidden for serialization.
@@ -30,8 +33,9 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $hidden = [
-       'password', 'remember_token',
-  ];
+        'password',
+        'remember_token',
+    ];
 
     /**
      * The attributes that should be cast.
@@ -48,8 +52,8 @@ class User extends Authenticatable
         return $this->hasMany(UserGroup::class, 'user_id', 'id');
     }
 
-    public function getSellerAttribute()
+    public function groups()
     {
-      return Seller::where('user_id', Auth::user()->id)->first();
+        return $this->belongsToMany(Group::class, 'user_groups', 'user_id', 'group_id');
     }
 }

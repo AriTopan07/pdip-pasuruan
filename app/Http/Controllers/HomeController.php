@@ -7,6 +7,7 @@ use App\Models\Group;
 use App\Models\UserGroup;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
@@ -32,6 +33,22 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $user = Auth::user()->id;
+        $data['totalData'] = 100;
+
+        $data['progresku'] = DB::table('data_diris')->where('user_id', $user)->count();
+        $data['progressPercentage'] = ($data['progresku'] / $data['totalData']) * 100;
+        $data['byKecamatan'] = DB::table('data_diris')
+            ->select('kecamatan', DB::raw('count(*) as total'))
+            ->groupBy('kecamatan')
+            ->get();
+
+        $data['byDesa'] = DB::table('data_diris')
+            ->select('desa', DB::raw('count(*) as total'))
+            ->groupBy('desa')
+            ->get();
+
+        // dd($data);
+        return view('home', compact('data'));
     }
 }
