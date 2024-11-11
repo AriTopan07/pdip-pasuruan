@@ -28,13 +28,25 @@
                                 </select>
                                 <p class="invalid-feedback"></p>
                             </div>
-                            <label class="fw-bold">Nama Lengkap<span class="text-danger">*</span></label>
+                            <label class="fw-bold">TPS<span class="text-danger">*</span></label>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="tps" id="tps"
+                                    autocomplete="off">
+                                <p class="invalid-feedback"></p>
+                            </div>
+                            <label class="fw-bold">Nama Lengkap Pemilih<span class="text-danger">*</span></label>
                             <div class="form-group">
                                 <input type="text" class="form-control" name="nama_lengkap" id="nama_lengkap"
                                     autocomplete="off">
                                 <p class="invalid-feedback"></p>
                             </div>
-                            <label class="fw-bold">Foto KTP<span class="text-danger">*</span></label>
+                            <label class="fw-bold">NIK Pemilih</label>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="nik" id="nik"
+                                    autocomplete="off">
+                                <p class="invalid-feedback"></p>
+                            </div>
+                            <label class="fw-bold">Foto KTP</label>
                             <div class="form-group">
                                 <input type="file" name="foto_ktp" id="foto_ktp" accept="image/*"
                                     style="display: none;">
