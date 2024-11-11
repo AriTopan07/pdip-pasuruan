@@ -21,17 +21,6 @@ class GroupSeeder extends Seeder
             ],
             [
                 'name' => 'Kecamatan',
-<<<<<<< HEAD
-                'description' => 'Hak Akses Kecamatan',
-            ],
-            [
-                'name' => 'Desa',
-                'description' => 'Hak Akses Desa',
-            ],
-            [
-                'name' => 'TPS',
-                'description' => 'Hak Akses TPS',
-=======
                 'description' => 'Hak Akses untuk Admin',
             ],
             [
@@ -41,7 +30,6 @@ class GroupSeeder extends Seeder
             [
                 'name' => 'TPS',
                 'description' => 'Hak Akses untuk user',
->>>>>>> 86b4992376126499bbb0a8dd9602aaaa859db086
             ],
         ]);
     }
