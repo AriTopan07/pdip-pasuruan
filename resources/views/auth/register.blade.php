@@ -64,7 +64,7 @@
                             </h6>
                         </div>
                     </div>
-                    <p>&copy; PAC PIDP Kab. Pasuruan 2024</p>
+                    <p>&copy; DPC PDI Perjuangan Kab. Pasuruan 2024</p>
                 </div>
             </div>
         </div>
