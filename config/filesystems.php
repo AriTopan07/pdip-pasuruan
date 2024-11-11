@@ -43,6 +43,9 @@ return [
                     CURLOPT_SSL_VERIFYHOST => false,
                 ],
             ],
+            'http' => [
+                'verify' => false,  // Menyertakan path ke file cacert.pem
+            ]
         ],
 
         'local' => [
