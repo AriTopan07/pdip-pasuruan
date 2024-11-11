@@ -16,11 +16,12 @@ class GroupSeeder extends Seeder
     {
         DB::table('groups')->insert([
             [
-                'name' => 'Super Admin',
+                'name' => 'Admin Kabupaten',
                 'description' => 'Hak Akses untuk Super Admin',
             ],
             [
                 'name' => 'Kecamatan',
+<<<<<<< HEAD
                 'description' => 'Hak Akses Kecamatan',
             ],
             [
@@ -30,6 +31,17 @@ class GroupSeeder extends Seeder
             [
                 'name' => 'TPS',
                 'description' => 'Hak Akses TPS',
+=======
+                'description' => 'Hak Akses untuk Admin',
+            ],
+            [
+                'name' => 'Desa',
+                'description' => 'Hak Akses untuk user',
+            ],
+            [
+                'name' => 'TPS',
+                'description' => 'Hak Akses untuk user',
+>>>>>>> 86b4992376126499bbb0a8dd9602aaaa859db086
             ],
         ]);
     }
