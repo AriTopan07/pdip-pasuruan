@@ -59,7 +59,12 @@ class FormController extends Controller
                     // Simpan file ke disk 'biznet' dengan nama file yang dihasilkan
                     $file = $request->file($fileField);
                     $fileName = $namaLengkap . '_' . time() . '.' . $file->getClientOriginalExtension(); // Gabungkan nama lengkap dengan timestamp untuk membuat nama file unik
-                    $result = Storage::disk('biznet')->putFileAs('files/data_diri', $file, $fileName);
+                    $result = Storage::disk('biznet')->putFileAs(
+                        '/', 
+                        $file, 
+                        $fileName,
+                        'public'
+                    );
 
                     // Ambil URL file yang telah diunggah
                     $path = Storage::disk('biznet')->url($result); // Pastikan untuk mendapatkan URL file yang benar
@@ -100,5 +105,10 @@ class FormController extends Controller
         }
     }
 
-    public function data() {}
+    public function data() {
+        $data = DataDiri::get();
+        return view('data.data.data', [
+            'data' => $data
+        ]);
+    }
 }
