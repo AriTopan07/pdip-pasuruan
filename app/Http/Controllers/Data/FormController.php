@@ -111,14 +111,4 @@ class FormController extends Controller
             ]);
         }
     }
-<<<<<<< HEAD
-=======
-
-    public function data() {
-        $data = DataDiri::get();
-        return view('data.data.data', [
-            'data' => $data
-        ]);
-    }
->>>>>>> b27dcd58af69fa907d05bb937b0fc9c8678ce495
 }
