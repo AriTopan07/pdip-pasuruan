@@ -3,12 +3,12 @@
 @section('content')
     <style>
         .bg {
-            /* background-image: url('https://awsimages.detik.net.id/community/media/visual/2024/08/29/risma-gus-hans-1_169.jpeg?w=1200'); */
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzEzgmWNTGppJFmtYxmgHrBj18z9tY3_-Exg&sg');
             /* Using relative path */
             background-size: cover;
             background-position: center center;
             background-repeat: no-repeat;
-            /* height: 10px; */
+            height: 100vh;
         }
     </style>
 
@@ -57,9 +57,9 @@
                                 </div>
                                 <button class="btn btn-primary btn-block btn-md shadow-md mt-4">Login</button>
                             </form>
-                            {{-- <h6 class="mt-4">
+                            <h6 class="mt-4">
                                 <a href="{{ route('account.register') }}">Buat akun</a>
-                            </h6> --}}
+                            </h6>
                         </div>
                     </div>
                     <p>&copy; DPC PDI Perjuangan Kab. Pasuruan 2024</p>

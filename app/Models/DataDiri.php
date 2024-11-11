@@ -12,9 +12,16 @@ class DataDiri extends Model
     protected $fillable = [
         'kecamatan',
         'desa',
+        'tps',
+        'nik',
         'nama_lengkap',
         'foto_ktp',
         'foto_diri',
         'user_id',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

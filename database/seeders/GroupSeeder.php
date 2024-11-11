@@ -20,12 +20,16 @@ class GroupSeeder extends Seeder
                 'description' => 'Hak Akses untuk Super Admin',
             ],
             [
-                'name' => 'Admininstrator',
-                'description' => 'Hak Akses untuk Admin',
+                'name' => 'Kecamatan',
+                'description' => 'Hak Akses Kecamatan',
             ],
             [
-                'name' => 'User',
-                'description' => 'Hak Akses untuk user',
+                'name' => 'Desa',
+                'description' => 'Hak Akses Desa',
+            ],
+            [
+                'name' => 'TPS',
+                'description' => 'Hak Akses TPS',
             ],
         ]);
     }

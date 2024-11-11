@@ -33,6 +33,10 @@ class HomeController extends Controller
      */
     public function index()
     {
+        // $data = [
+        //     'GEBRO'
+        // ];
+
         $user = Auth::user()->id;
         $data['totalData'] = 100;
 
@@ -46,6 +50,11 @@ class HomeController extends Controller
         $data['byDesa'] = DB::table('data_diris')
             ->select('desa', DB::raw('count(*) as total'))
             ->groupBy('desa')
+            ->get();
+
+        $data['byTps'] = DB::table('data_diris')
+            ->select('kecamatan', 'desa', 'tps', DB::raw('count(*) as total'))
+            ->groupBy('kecamatan', 'desa', 'tps')
             ->get();
 
         // dd($data);

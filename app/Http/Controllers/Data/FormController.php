@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Data;
 
 use App\Http\Controllers\Controller;
 use App\Models\DataDiri;
+use App\Models\UserGroup;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Storage;
@@ -16,21 +18,43 @@ class FormController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-        $this->middleware(function ($request, $next) {
-            Session::put('menu_active', '/form-tambah-data');
-            return $next($request);
-        });
     }
 
     public function data()
     {
-        $data = DataDiri::get();
+        Session::put('menu_active', '/view/data');
+        $user = auth()->user();
+        $userGroup = UserGroup::where('user_id', $user->id)->first();
+        if (!$userGroup) {
+            return response()->json(['error' => 'User group tidak ditemukan'], 404);
+        }
+        $groupId = $userGroup->group_id;
+        $query = DataDiri::query();
 
-        return view('data.form.index', compact('data'));
+        switch ($groupId) {
+            case 1:
+                $data = $query->paginate(10);
+                break;
+            case 2:
+                $data = $query->where('kecamatan', $user->name)->paginate(10);
+                break;
+            case 3:
+                $data = $query->where('desa', $user->name)->paginate(10);
+                break;
+            case 4:
+                $data = $query->where('user_id', $user->id)->paginate(10);
+                break;
+            default:
+                return response()->json(['error' => 'Grup tidak valid'], 400);
+        }
+        $message = $data->isEmpty() ? 'Data tidak ditemukan' : null;
+
+        return view('data.form.index', compact('data', 'message'));
     }
 
     public function view()
     {
+        Session::put('menu_active', '/form-tambah-data');
         return view('data.form.view');
     }
 
@@ -90,6 +114,8 @@ class FormController extends Controller
             $data = DataDiri::create([
                 'kecamatan' => $request->kecamatan,
                 'desa' => $request->desa,
+                'tps' => $request->tps,
+                'nik' => $request->nik,
                 'nama_lengkap' => $request->nama_lengkap,
                 'foto_ktp' => $uploadedFiles['foto_ktp'] ?? null,
                 'foto_diri' => $uploadedFiles['foto_diri'] ?? null,

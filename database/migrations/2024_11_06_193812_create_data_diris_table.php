@@ -18,8 +18,10 @@ class CreateDataDirisTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->string('kecamatan');
             $table->string('desa');
+            $table->string('tps');
+            $table->string('nik')->nullable();
             $table->string('nama_lengkap');
-            $table->string('foto_ktp');
+            $table->string('foto_ktp')->nullable();
             $table->string('foto_diri');
             $table->timestamps();
 
