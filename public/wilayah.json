@@ -1,0 +1,2192 @@
+[
+    {
+        "NO": 1,
+        "KECAMATAN": "PURWODADI",
+        "KELURAHAN": "GERBO",
+        "JUMLAH": 15
+    },
+    {
+        "NO": 2,
+        "KECAMATAN": "PURWODADI",
+        "KELURAHAN": "DAWUHANSENGON",
+        "JUMLAH": 10
+    },
+    {
+        "NO": 3,
+        "KECAMATAN": "PURWODADI",
+        "KELURAHAN": "LEBAK REJO",
+        "JUMLAH": 10
+    },
+    {
+        "NO": 4,
+        "KECAMATAN": "PURWODADI",
+        "KELURAHAN": "COWEK",
+        "JUMLAH": 10
+    },
+    {
+        "NO": 5,
+        "KECAMATAN": "PURWODADI",
+        "KELURAHAN": "PURWODADI",
+        "JUMLAH": 9
+    },
+    {
+        "NO": 6,
+        "KECAMATAN": "PURWODADI",
+        "KELURAHAN": "PAREREJO",
+        "JUMLAH": 12
+    },
+    {
+        "NO": 7,
+        "KECAMATAN": "PURWODADI",
+        "KELURAHAN": "GAJAHREJO",
+        "JUMLAH": 7
+    },
+    {
+        "NO": 8,
+        "KECAMATAN": "PURWODADI",
+        "KELURAHAN": "SENTUL",
+        "JUMLAH": 8
+    },
+    {
+        "NO": 9,
+        "KECAMATAN": "PURWODADI",
+        "KELURAHAN": "JATISARI",
+        "JUMLAH": 9
+    },
+    {
+        "NO": 10,
+        "KECAMATAN": "PURWODADI",
+        "KELURAHAN": "TAMBAK SARI",
+        "JUMLAH": 9
+    },
+    {
+        "NO": 11,
+        "KECAMATAN": "PURWODADI",
+        "KELURAHAN": "PUCANG SARI",
+        "JUMLAH": 6
+    },
+    {
+        "NO": 12,
+        "KECAMATAN": "PURWODADI",
+        "KELURAHAN": "SEMUT",
+        "JUMLAH": 3
+    },
+    {
+        "NO": 13,
+        "KECAMATAN": "PURWODADI",
+        "KELURAHAN": "CAPANG",
+        "JUMLAH": 9
+    },
+    {
+        "NO": 14,
+        "KECAMATAN": "TUTUR",
+        "KELURAHAN": "NGADIREJO",
+        "JUMLAH": 4
+    },
+    {
+        "NO": 15,
+        "KECAMATAN": "TUTUR",
+        "KELURAHAN": "BLARANG",
+        "JUMLAH": 7
+    },
+    {
+        "NO": 16,
+        "KECAMATAN": "TUTUR",
+        "KELURAHAN": "KAYU KEBEK",
+        "JUMLAH": 6
+    },
+    {
+        "NO": 17,
+        "KECAMATAN": "TUTUR",
+        "KELURAHAN": "ANDONO SARI",
+        "JUMLAH": 9
+    },
+    {
+        "NO": 18,
+        "KECAMATAN": "TUTUR",
+        "KELURAHAN": "WONOSARI",
+        "JUMLAH": 9
+    },
+    {
+        "NO": 19,
+        "KECAMATAN": "TUTUR",
+        "KELURAHAN": "GENDRO",
+        "JUMLAH": 6
+    },
+    {
+        "NO": 20,
+        "KECAMATAN": "TUTUR",
+        "KELURAHAN": "TLOGOSARI",
+        "JUMLAH": 8
+    },
+    {
+        "NO": 21,
+        "KECAMATAN": "TUTUR",
+        "KELURAHAN": "TUTUR",
+        "JUMLAH": 8
+    },
+    {
+        "NO": 22,
+        "KECAMATAN": "TUTUR",
+        "KELURAHAN": "PUNGGING",
+        "JUMLAH": 4
+    },
+    {
+        "NO": 23,
+        "KECAMATAN": "TUTUR",
+        "KELURAHAN": "KALIPUCANG",
+        "JUMLAH": 7
+    },
+    {
+        "NO": 24,
+        "KECAMATAN": "TUTUR",
+        "KELURAHAN": "SUMBER PITU",
+        "JUMLAH": 6
+    },
+    {
+        "NO": 25,
+        "KECAMATAN": "TUTUR",
+        "KELURAHAN": "NGEMBAL",
+        "JUMLAH": 13
+    },
+    {
+        "NO": 26,
+        "KECAMATAN": "PUSPO",
+        "KELURAHAN": "KEMIRI",
+        "JUMLAH": 7
+    },
+    {
+        "NO": 27,
+        "KECAMATAN": "PUSPO",
+        "KELURAHAN": "JANJANGWULUNG",
+        "JUMLAH": 8
+    },
+    {
+        "NO": 28,
+        "KECAMATAN": "PUSPO",
+        "KELURAHAN": "PALANGSARI",
+        "JUMLAH": 6
+    },
+    {
+        "NO": 29,
+        "KECAMATAN": "PUSPO",
+        "KELURAHAN": "PUSPO",
+        "JUMLAH": 10
+    },
+    {
+        "NO": 30,
+        "KECAMATAN": "PUSPO",
+        "KELURAHAN": "JIMBARAN",
+        "JUMLAH": 11
+    },
+    {
+        "NO": 31,
+        "KECAMATAN": "PUSPO",
+        "KELURAHAN": "PUSUNG MALANG",
+        "JUMLAH": 7
+    },
+    {
+        "NO": 32,
+        "KECAMATAN": "PUSPO",
+        "KELURAHAN": "KEDUWUNG",
+        "JUMLAH": 4
+    },
+    {
+        "NO": 33,
+        "KECAMATAN": "LUMBANG",
+        "KELURAHAN": "WONOREJO",
+        "JUMLAH": 4
+    },
+    {
+        "NO": 34,
+        "KECAMATAN": "LUMBANG",
+        "KELURAHAN": "BANJARIMBO",
+        "JUMLAH": 3
+    },
+    {
+        "NO": 35,
+        "KECAMATAN": "LUMBANG",
+        "KELURAHAN": "WELULANG",
+        "JUMLAH": 3
+    },
+    {
+        "NO": 36,
+        "KECAMATAN": "LUMBANG",
+        "KELURAHAN": "WATU LUMBUNG",
+        "JUMLAH": 5
+    },
+    {
+        "NO": 37,
+        "KECAMATAN": "LUMBANG",
+        "KELURAHAN": "PANDITAN",
+        "JUMLAH": 4
+    },
+    {
+        "NO": 38,
+        "KECAMATAN": "LUMBANG",
+        "KELURAHAN": "BULU KANDANG",
+        "JUMLAH": 5
+    },
+    {
+        "NO": 39,
+        "KECAMATAN": "LUMBANG",
+        "KELURAHAN": "LUMBANG",
+        "JUMLAH": 5
+    },
+    {
+        "NO": 40,
+        "KECAMATAN": "LUMBANG",
+        "KELURAHAN": "PANCUR",
+        "JUMLAH": 5
+    },
+    {
+        "NO": 41,
+        "KECAMATAN": "LUMBANG",
+        "KELURAHAN": "KRONTO",
+        "JUMLAH": 7
+    },
+    {
+        "NO": 42,
+        "KECAMATAN": "LUMBANG",
+        "KELURAHAN": "KARANG ASEM",
+        "JUMLAH": 3
+    },
+    {
+        "NO": 43,
+        "KECAMATAN": "LUMBANG",
+        "KELURAHAN": "CUKUR GULING",
+        "JUMLAH": 9
+    },
+    {
+        "NO": 44,
+        "KECAMATAN": "LUMBANG",
+        "KELURAHAN": "KARANG JATI",
+        "JUMLAH": 5
+    },
+    {
+        "NO": 45,
+        "KECAMATAN": "PASREPAN",
+        "KELURAHAN": "NGANTUNGAN",
+        "JUMLAH": 4
+    },
+    {
+        "NO": 46,
+        "KECAMATAN": "PASREPAN",
+        "KELURAHAN": "GALIH",
+        "JUMLAH": 6
+    },
+    {
+        "NO": 47,
+        "KECAMATAN": "PASREPAN",
+        "KELURAHAN": "PETUNG",
+        "JUMLAH": 5
+    },
+    {
+        "NO": 48,
+        "KECAMATAN": "PASREPAN",
+        "KELURAHAN": "KLAKAH",
+        "JUMLAH": 2
+    },
+    {
+        "NO": 49,
+        "KECAMATAN": "PASREPAN",
+        "KELURAHAN": "SIBON",
+        "JUMLAH": 5
+    },
+    {
+        "NO": 50,
+        "KECAMATAN": "PASREPAN",
+        "KELURAHAN": "MANGGUAN",
+        "JUMLAH": 5
+    },
+    {
+        "NO": 51,
+        "KECAMATAN": "PASREPAN",
+        "KELURAHAN": "AMPEL SARI",
+        "JUMLAH": 7
+    },
+    {
+        "NO": 52,
+        "KECAMATAN": "PASREPAN",
+        "KELURAHAN": "TEMPURAN",
+        "JUMLAH": 9
+    },
+    {
+        "NO": 53,
+        "KECAMATAN": "PASREPAN",
+        "KELURAHAN": "SAPULANTE",
+        "JUMLAH": 4
+    },
+    {
+        "NO": 54,
+        "KECAMATAN": "PASREPAN",
+        "KELURAHAN": "POHGEDANG",
+        "JUMLAH": 5
+    },
+    {
+        "NO": 55,
+        "KECAMATAN": "PASREPAN",
+        "KELURAHAN": "PASREPAN",
+        "JUMLAH": 8
+    },
+    {
+        "NO": 56,
+        "KECAMATAN": "PASREPAN",
+        "KELURAHAN": "REJOSALAM",
+        "JUMLAH": 5
+    },
+    {
+        "NO": 57,
+        "KECAMATAN": "PASREPAN",
+        "KELURAHAN": "CENGKRONG",
+        "JUMLAH": 3
+    },
+    {
+        "NO": 58,
+        "KECAMATAN": "PASREPAN",
+        "KELURAHAN": "LEMAHBANG",
+        "JUMLAH": 2
+    },
+    {
+        "NO": 59,
+        "KECAMATAN": "PASREPAN",
+        "KELURAHAN": "TAMBAK REJO",
+        "JUMLAH": 4
+    },
+    {
+        "NO": 60,
+        "KECAMATAN": "PASREPAN",
+        "KELURAHAN": "POHGADING",
+        "JUMLAH": 4
+    },
+    {
+        "NO": 61,
+        "KECAMATAN": "PASREPAN",
+        "KELURAHAN": "JOGOREPUH",
+        "JUMLAH": 3
+    },
+    {
+        "NO": 62,
+        "KECAMATAN": "KEJAYAN",
+        "KELURAHAN": "KEJAYAN",
+        "JUMLAH": 6
+    },
+    {
+        "NO": 63,
+        "KECAMATAN": "KEJAYAN",
+        "KELURAHAN": "ORO ORO PULEH",
+        "JUMLAH": 3
+    },
+    {
+        "NO": 64,
+        "KECAMATAN": "KEJAYAN",
+        "KELURAHAN": "KEDUNGPENGARON",
+        "JUMLAH": 3
+    },
+    {
+        "NO": 65,
+        "KECAMATAN": "KEJAYAN",
+        "KELURAHAN": "BENERWOJO",
+        "JUMLAH": 4
+    },
+    {
+        "NO": 66,
+        "KECAMATAN": "KEJAYAN",
+        "KELURAHAN": "COBANJOYO",
+        "JUMLAH": 4
+    },
+    {
+        "NO": 67,
+        "KECAMATAN": "KEJAYAN",
+        "KELURAHAN": "KEPUH",
+        "JUMLAH": 3
+    },
+    {
+        "NO": 68,
+        "KECAMATAN": "KEJAYAN",
+        "KELURAHAN": "LOROKAN",
+        "JUMLAH": 4
+    },
+    {
+        "NO": 69,
+        "KECAMATAN": "KEJAYAN",
+        "KELURAHAN": "KLANGRONG",
+        "JUMLAH": 3
+    },
+    {
+        "NO": 70,
+        "KECAMATAN": "KEJAYAN",
+        "KELURAHAN": "LINGGO",
+        "JUMLAH": 3
+    },
+    {
+        "NO": 71,
+        "KECAMATAN": "KEJAYAN",
+        "KELURAHAN": "AMBAL AMBIL",
+        "JUMLAH": 6
+    },
+    {
+        "NO": 72,
+        "KECAMATAN": "KEJAYAN",
+        "KELURAHAN": "KEDEMUNGAN",
+        "JUMLAH": 4
+    },
+    {
+        "NO": 73,
+        "KECAMATAN": "KEJAYAN",
+        "KELURAHAN": "WRATI",
+        "JUMLAH": 7
+    },
+    {
+        "NO": 74,
+        "KECAMATAN": "KEJAYAN",
+        "KELURAHAN": "PACAR KELING",
+        "JUMLAH": 5
+    },
+    {
+        "NO": 75,
+        "KECAMATAN": "KEJAYAN",
+        "KELURAHAN": "LUWUK",
+        "JUMLAH": 3
+    },
+    {
+        "NO": 76,
+        "KECAMATAN": "KEJAYAN",
+        "KELURAHAN": "SUMBER SUKO",
+        "JUMLAH": 3
+    },
+    {
+        "NO": 77,
+        "KECAMATAN": "KEJAYAN",
+        "KELURAHAN": "SUMBER BANTENG",
+        "JUMLAH": 3
+    },
+    {
+        "NO": 78,
+        "KECAMATAN": "KEJAYAN",
+        "KELURAHAN": "KURUNG",
+        "JUMLAH": 4
+    },
+    {
+        "NO": 79,
+        "KECAMATAN": "KEJAYAN",
+        "KELURAHAN": "TANGGULANGIN",
+        "JUMLAH": 7
+    },
+    {
+        "NO": 80,
+        "KECAMATAN": "KEJAYAN",
+        "KELURAHAN": "RANDUGONG",
+        "JUMLAH": 4
+    },
+    {
+        "NO": 81,
+        "KECAMATAN": "KEJAYAN",
+        "KELURAHAN": "WANGKALWETAN",
+        "JUMLAH": 2
+    },
+    {
+        "NO": 82,
+        "KECAMATAN": "KEJAYAN",
+        "KELURAHAN": "KLINTER",
+        "JUMLAH": 4
+    },
+    {
+        "NO": 83,
+        "KECAMATAN": "KEJAYAN",
+        "KELURAHAN": "TUNDOSURO\/TUNDOSORO",
+        "JUMLAH": 4
+    },
+    {
+        "NO": 84,
+        "KECAMATAN": "KEJAYAN",
+        "KELURAHAN": "KETANGIREJO",
+        "JUMLAH": 3
+    },
+    {
+        "NO": 85,
+        "KECAMATAN": "KEJAYAN",
+        "KELURAHAN": "PATEBON",
+        "JUMLAH": 4
+    },
+    {
+        "NO": 86,
+        "KECAMATAN": "KEJAYAN",
+        "KELURAHAN": "SLADI",
+        "JUMLAH": 5
+    },
+    {
+        "NO": 87,
+        "KECAMATAN": "WONOREJO",
+        "KELURAHAN": "KARANGMENGGAH",
+        "JUMLAH": 4
+    },
+    {
+        "NO": 88,
+        "KECAMATAN": "WONOREJO",
+        "KELURAHAN": "KARANGJATIANYAR",
+        "JUMLAH": 7
+    },
+    {
+        "NO": 89,
+        "KECAMATAN": "WONOREJO",
+        "KELURAHAN": "PAKIJANGAN",
+        "JUMLAH": 6
+    },
+    {
+        "NO": 90,
+        "KECAMATAN": "WONOREJO",
+        "KELURAHAN": "COBANBLIMBING",
+        "JUMLAH": 5
+    },
+    {
+        "NO": 91,
+        "KECAMATAN": "WONOREJO",
+        "KELURAHAN": "WONOREJO",
+        "JUMLAH": 6
+    },
+    {
+        "NO": 92,
+        "KECAMATAN": "WONOREJO",
+        "KELURAHAN": "WONOSARI",
+        "JUMLAH": 4
+    },
+    {
+        "NO": 93,
+        "KECAMATAN": "WONOREJO",
+        "KELURAHAN": "TAMANSARI",
+        "JUMLAH": 5
+    },
+    {
+        "NO": 94,
+        "KECAMATAN": "WONOREJO",
+        "KELURAHAN": "JATI GUNTING",
+        "JUMLAH": 9
+    },
+    {
+        "NO": 95,
+        "KECAMATAN": "WONOREJO",
+        "KELURAHAN": "REBONO",
+        "JUMLAH": 5
+    },
+    {
+        "NO": 96,
+        "KECAMATAN": "WONOREJO",
+        "KELURAHAN": "KARANGSONO",
+        "JUMLAH": 6
+    },
+    {
+        "NO": 97,
+        "KECAMATAN": "WONOREJO",
+        "KELURAHAN": "KENDANGDUKUH",
+        "JUMLAH": 4
+    },
+    {
+        "NO": 98,
+        "KECAMATAN": "WONOREJO",
+        "KELURAHAN": "KARANGASEM",
+        "JUMLAH": 5
+    },
+    {
+        "NO": 99,
+        "KECAMATAN": "WONOREJO",
+        "KELURAHAN": "KLUWUT",
+        "JUMLAH": 5
+    },
+    {
+        "NO": 100,
+        "KECAMATAN": "WONOREJO",
+        "KELURAHAN": "SAMBISIRAH",
+        "JUMLAH": 6
+    },
+    {
+        "NO": 101,
+        "KECAMATAN": "WONOREJO",
+        "KELURAHAN": "LEBAK SARI",
+        "JUMLAH": 4
+    },
+    {
+        "NO": 102,
+        "KECAMATAN": "PURWOSARI",
+        "KELURAHAN": "PURWOSARI",
+        "JUMLAH": 11
+    },
+    {
+        "NO": 103,
+        "KECAMATAN": "PURWOSARI",
+        "KELURAHAN": "SUMBERREJO",
+        "JUMLAH": 9
+    },
+    {
+        "NO": 104,
+        "KECAMATAN": "PURWOSARI",
+        "KELURAHAN": "SEKARMOJO",
+        "JUMLAH": 10
+    },
+    {
+        "NO": 105,
+        "KECAMATAN": "PURWOSARI",
+        "KELURAHAN": "TEJOWANGI",
+        "JUMLAH": 8
+    },
+    {
+        "NO": 106,
+        "KECAMATAN": "PURWOSARI",
+        "KELURAHAN": "KERTOSARI",
+        "JUMLAH": 7
+    },
+    {
+        "NO": 107,
+        "KECAMATAN": "PURWOSARI",
+        "KELURAHAN": "MARTOPURO",
+        "JUMLAH": 15
+    },
+    {
+        "NO": 108,
+        "KECAMATAN": "PURWOSARI",
+        "KELURAHAN": "SENGONAGUNG",
+        "JUMLAH": 10
+    },
+    {
+        "NO": 109,
+        "KECAMATAN": "PURWOSARI",
+        "KELURAHAN": "PAGER",
+        "JUMLAH": 6
+    },
+    {
+        "NO": 110,
+        "KECAMATAN": "PURWOSARI",
+        "KELURAHAN": "CENDONO",
+        "JUMLAH": 6
+    },
+    {
+        "NO": 111,
+        "KECAMATAN": "PURWOSARI",
+        "KELURAHAN": "KARANGREJO",
+        "JUMLAH": 8
+    },
+    {
+        "NO": 112,
+        "KECAMATAN": "PURWOSARI",
+        "KELURAHAN": "SUMBERSUKO",
+        "JUMLAH": 7
+    },
+    {
+        "NO": 113,
+        "KECAMATAN": "PURWOSARI",
+        "KELURAHAN": "PUCANG SARI",
+        "JUMLAH": 6
+    },
+    {
+        "NO": 114,
+        "KECAMATAN": "PURWOSARI",
+        "KELURAHAN": "KAYOMAN",
+        "JUMLAH": 3
+    },
+    {
+        "NO": 115,
+        "KECAMATAN": "PURWOSARI",
+        "KELURAHAN": "SUKODERMO",
+        "JUMLAH": 3
+    },
+    {
+        "NO": 116,
+        "KECAMATAN": "PURWOSARI",
+        "KELURAHAN": "BAKALAN",
+        "JUMLAH": 8
+    },
+    {
+        "NO": 117,
+        "KECAMATAN": "SUKOREJO",
+        "KELURAHAN": "GUNTING",
+        "JUMLAH": 8
+    },
+    {
+        "NO": 118,
+        "KECAMATAN": "SUKOREJO",
+        "KELURAHAN": "PAKUKERTO",
+        "JUMLAH": 9
+    },
+    {
+        "NO": 119,
+        "KECAMATAN": "SUKOREJO",
+        "KELURAHAN": "GLAGAHSARI",
+        "JUMLAH": 10
+    },
+    {
+        "NO": 120,
+        "KECAMATAN": "SUKOREJO",
+        "KELURAHAN": "SUKOREJO",
+        "JUMLAH": 8
+    },
+    {
+        "NO": 121,
+        "KECAMATAN": "SUKOREJO",
+        "KELURAHAN": "KARANGSONO",
+        "JUMLAH": 6
+    },
+    {
+        "NO": 122,
+        "KECAMATAN": "SUKOREJO",
+        "KELURAHAN": "SEBANDUNG",
+        "JUMLAH": 4
+    },
+    {
+        "NO": 123,
+        "KECAMATAN": "SUKOREJO",
+        "KELURAHAN": "DUKUHSARI",
+        "JUMLAH": 3
+    },
+    {
+        "NO": 124,
+        "KECAMATAN": "SUKOREJO",
+        "KELURAHAN": "LECARI",
+        "JUMLAH": 6
+    },
+    {
+        "NO": 125,
+        "KECAMATAN": "SUKOREJO",
+        "KELURAHAN": "LEMAHBANG",
+        "JUMLAH": 8
+    },
+    {
+        "NO": 126,
+        "KECAMATAN": "SUKOREJO",
+        "KELURAHAN": "NGADIMULYO",
+        "JUMLAH": 8
+    },
+    {
+        "NO": 127,
+        "KECAMATAN": "SUKOREJO",
+        "KELURAHAN": "TANJUNGARUM",
+        "JUMLAH": 6
+    },
+    {
+        "NO": 128,
+        "KECAMATAN": "SUKOREJO",
+        "KELURAHAN": "SUWAYUWO",
+        "JUMLAH": 9
+    },
+    {
+        "NO": 129,
+        "KECAMATAN": "SUKOREJO",
+        "KELURAHAN": "MOJOTENGAH",
+        "JUMLAH": 7
+    },
+    {
+        "NO": 130,
+        "KECAMATAN": "SUKOREJO",
+        "KELURAHAN": "KALIREJO",
+        "JUMLAH": 7
+    },
+    {
+        "NO": 131,
+        "KECAMATAN": "SUKOREJO",
+        "KELURAHAN": "CANDIBINANGUN",
+        "JUMLAH": 7
+    },
+    {
+        "NO": 132,
+        "KECAMATAN": "SUKOREJO",
+        "KELURAHAN": "KENDURUAN",
+        "JUMLAH": 6
+    },
+    {
+        "NO": 133,
+        "KECAMATAN": "SUKOREJO",
+        "KELURAHAN": "SUKORAME",
+        "JUMLAH": 4
+    },
+    {
+        "NO": 134,
+        "KECAMATAN": "SUKOREJO",
+        "KELURAHAN": "CURAHREJO",
+        "JUMLAH": 4
+    },
+    {
+        "NO": 135,
+        "KECAMATAN": "SUKOREJO",
+        "KELURAHAN": "WONOKERTO",
+        "JUMLAH": 4
+    },
+    {
+        "NO": 136,
+        "KECAMATAN": "PRIGEN",
+        "KELURAHAN": "LEDUG",
+        "JUMLAH": 10
+    },
+    {
+        "NO": 137,
+        "KECAMATAN": "PRIGEN",
+        "KELURAHAN": "PECALUKAN",
+        "JUMLAH": 14
+    },
+    {
+        "NO": 138,
+        "KECAMATAN": "PRIGEN",
+        "KELURAHAN": "PRIGEN",
+        "JUMLAH": 10
+    },
+    {
+        "NO": 139,
+        "KECAMATAN": "PRIGEN",
+        "KELURAHAN": "JATIARJO",
+        "JUMLAH": 10
+    },
+    {
+        "NO": 140,
+        "KECAMATAN": "PRIGEN",
+        "KELURAHAN": "WATUAGUNG",
+        "JUMLAH": 9
+    },
+    {
+        "NO": 141,
+        "KECAMATAN": "PRIGEN",
+        "KELURAHAN": "DAYUREJO",
+        "JUMLAH": 16
+    },
+    {
+        "NO": 142,
+        "KECAMATAN": "PRIGEN",
+        "KELURAHAN": "BULUKANDANG",
+        "JUMLAH": 9
+    },
+    {
+        "NO": 143,
+        "KECAMATAN": "PRIGEN",
+        "KELURAHAN": "KETANIRENG",
+        "JUMLAH": 7
+    },
+    {
+        "NO": 144,
+        "KECAMATAN": "PRIGEN",
+        "KELURAHAN": "SUKOLELO",
+        "JUMLAH": 7
+    },
+    {
+        "NO": 145,
+        "KECAMATAN": "PRIGEN",
+        "KELURAHAN": "LUMBANGREJO",
+        "JUMLAH": 11
+    },
+    {
+        "NO": 146,
+        "KECAMATAN": "PRIGEN",
+        "KELURAHAN": "SUKORENO",
+        "JUMLAH": 12
+    },
+    {
+        "NO": 147,
+        "KECAMATAN": "PRIGEN",
+        "KELURAHAN": "SEKARJOHO",
+        "JUMLAH": 6
+    },
+    {
+        "NO": 148,
+        "KECAMATAN": "PRIGEN",
+        "KELURAHAN": "GAMBIRAN",
+        "JUMLAH": 12
+    },
+    {
+        "NO": 149,
+        "KECAMATAN": "PRIGEN",
+        "KELURAHAN": "CANDIWATES",
+        "JUMLAH": 8
+    },
+    {
+        "NO": 150,
+        "KECAMATAN": "PANDAAN",
+        "KELURAHAN": "KUTOREJO",
+        "JUMLAH": 8
+    },
+    {
+        "NO": 151,
+        "KECAMATAN": "PANDAAN",
+        "KELURAHAN": "JOGOSARI",
+        "JUMLAH": 10
+    },
+    {
+        "NO": 152,
+        "KECAMATAN": "PANDAAN",
+        "KELURAHAN": "PETUNGASRI",
+        "JUMLAH": 9
+    },
+    {
+        "NO": 153,
+        "KECAMATAN": "PANDAAN",
+        "KELURAHAN": "PANDAAN",
+        "JUMLAH": 9
+    },
+    {
+        "NO": 154,
+        "KECAMATAN": "PANDAAN",
+        "KELURAHAN": "PLINTAHAN",
+        "JUMLAH": 9
+    },
+    {
+        "NO": 155,
+        "KECAMATAN": "PANDAAN",
+        "KELURAHAN": "DURENSEWU",
+        "JUMLAH": 9
+    },
+    {
+        "NO": 156,
+        "KECAMATAN": "PANDAAN",
+        "KELURAHAN": "KARANGJATI",
+        "JUMLAH": 15
+    },
+    {
+        "NO": 157,
+        "KECAMATAN": "PANDAAN",
+        "KELURAHAN": "WEDORO",
+        "JUMLAH": 7
+    },
+    {
+        "NO": 158,
+        "KECAMATAN": "PANDAAN",
+        "KELURAHAN": "TUNGGULWULUNG",
+        "JUMLAH": 6
+    },
+    {
+        "NO": 159,
+        "KECAMATAN": "PANDAAN",
+        "KELURAHAN": "SUMBERGEDANG",
+        "JUMLAH": 14
+    },
+    {
+        "NO": 160,
+        "KECAMATAN": "PANDAAN",
+        "KELURAHAN": "TAWANGREJO",
+        "JUMLAH": 10
+    },
+    {
+        "NO": 161,
+        "KECAMATAN": "PANDAAN",
+        "KELURAHAN": "NOGOSARI",
+        "JUMLAH": 10
+    },
+    {
+        "NO": 162,
+        "KECAMATAN": "PANDAAN",
+        "KELURAHAN": "KEBONWARIS",
+        "JUMLAH": 7
+    },
+    {
+        "NO": 163,
+        "KECAMATAN": "PANDAAN",
+        "KELURAHAN": "SEBANI",
+        "JUMLAH": 7
+    },
+    {
+        "NO": 164,
+        "KECAMATAN": "PANDAAN",
+        "KELURAHAN": "BANJARSARI",
+        "JUMLAH": 3
+    },
+    {
+        "NO": 165,
+        "KECAMATAN": "PANDAAN",
+        "KELURAHAN": "BANJARKEJEN",
+        "JUMLAH": 5
+    },
+    {
+        "NO": 166,
+        "KECAMATAN": "PANDAAN",
+        "KELURAHAN": "KEMIRISEWU",
+        "JUMLAH": 8
+    },
+    {
+        "NO": 167,
+        "KECAMATAN": "PANDAAN",
+        "KELURAHAN": "SUMBERREJO",
+        "JUMLAH": 12
+    },
+    {
+        "NO": 168,
+        "KECAMATAN": "GEMPOL",
+        "KELURAHAN": "WONOSUNYO",
+        "JUMLAH": 6
+    },
+    {
+        "NO": 169,
+        "KECAMATAN": "GEMPOL",
+        "KELURAHAN": "SUMBERSUKO",
+        "JUMLAH": 10
+    },
+    {
+        "NO": 170,
+        "KECAMATAN": "GEMPOL",
+        "KELURAHAN": "WONOSARI",
+        "JUMLAH": 6
+    },
+    {
+        "NO": 171,
+        "KECAMATAN": "GEMPOL",
+        "KELURAHAN": "KEPULUNGAN",
+        "JUMLAH": 14
+    },
+    {
+        "NO": 172,
+        "KECAMATAN": "GEMPOL",
+        "KELURAHAN": "RANDUPITU",
+        "JUMLAH": 10
+    },
+    {
+        "NO": 173,
+        "KECAMATAN": "GEMPOL",
+        "KELURAHAN": "NGERONG",
+        "JUMLAH": 15
+    },
+    {
+        "NO": 174,
+        "KECAMATAN": "GEMPOL",
+        "KELURAHAN": "KARANGREJO",
+        "JUMLAH": 14
+    },
+    {
+        "NO": 175,
+        "KECAMATAN": "GEMPOL",
+        "KELURAHAN": "BULUSARI",
+        "JUMLAH": 13
+    },
+    {
+        "NO": 176,
+        "KECAMATAN": "GEMPOL",
+        "KELURAHAN": "JERUK PURUT",
+        "JUMLAH": 7
+    },
+    {
+        "NO": 177,
+        "KECAMATAN": "GEMPOL",
+        "KELURAHAN": "WATUKOSEK",
+        "JUMLAH": 6
+    },
+    {
+        "NO": 178,
+        "KECAMATAN": "GEMPOL",
+        "KELURAHAN": "CARAT",
+        "JUMLAH": 9
+    },
+    {
+        "NO": 179,
+        "KECAMATAN": "GEMPOL",
+        "KELURAHAN": "KEJAPANAN",
+        "JUMLAH": 30
+    },
+    {
+        "NO": 180,
+        "KECAMATAN": "GEMPOL",
+        "KELURAHAN": "WINONG",
+        "JUMLAH": 11
+    },
+    {
+        "NO": 181,
+        "KECAMATAN": "GEMPOL",
+        "KELURAHAN": "LEGOK",
+        "JUMLAH": 12
+    },
+    {
+        "NO": 182,
+        "KECAMATAN": "GEMPOL",
+        "KELURAHAN": "GEMPOL",
+        "JUMLAH": 14
+    },
+    {
+        "NO": 183,
+        "KECAMATAN": "BEJI",
+        "KELURAHAN": "GLANGGANG",
+        "JUMLAH": 5
+    },
+    {
+        "NO": 184,
+        "KECAMATAN": "BEJI",
+        "KELURAHAN": "PAGAK",
+        "JUMLAH": 7
+    },
+    {
+        "NO": 185,
+        "KECAMATAN": "BEJI",
+        "KELURAHAN": "BAUJENG",
+        "JUMLAH": 9
+    },
+    {
+        "NO": 186,
+        "KECAMATAN": "BEJI",
+        "KELURAHAN": "NGEMBE",
+        "JUMLAH": 6
+    },
+    {
+        "NO": 187,
+        "KECAMATAN": "BEJI",
+        "KELURAHAN": "KENEP",
+        "JUMLAH": 5
+    },
+    {
+        "NO": 188,
+        "KECAMATAN": "BEJI",
+        "KELURAHAN": "SIDOWAYAH",
+        "JUMLAH": 6
+    },
+    {
+        "NO": 189,
+        "KECAMATAN": "BEJI",
+        "KELURAHAN": "GAJAHBENDO",
+        "JUMLAH": 5
+    },
+    {
+        "NO": 190,
+        "KECAMATAN": "BEJI",
+        "KELURAHAN": "GUNUNG GANGSIR",
+        "JUMLAH": 18
+    },
+    {
+        "NO": 191,
+        "KECAMATAN": "BEJI",
+        "KELURAHAN": "WONOKOYO",
+        "JUMLAH": 9
+    },
+    {
+        "NO": 192,
+        "KECAMATAN": "BEJI",
+        "KELURAHAN": "GUNUNGSARI",
+        "JUMLAH": 7
+    },
+    {
+        "NO": 193,
+        "KECAMATAN": "BEJI",
+        "KELURAHAN": "CANGKRINGMALANG",
+        "JUMLAH": 16
+    },
+    {
+        "NO": 194,
+        "KECAMATAN": "BEJI",
+        "KELURAHAN": "KEDUNGRINGIN",
+        "JUMLAH": 11
+    },
+    {
+        "NO": 195,
+        "KECAMATAN": "BEJI",
+        "KELURAHAN": "KEDUNGBOTO",
+        "JUMLAH": 4
+    },
+    {
+        "NO": 196,
+        "KECAMATAN": "BEJI",
+        "KELURAHAN": "BEJI",
+        "JUMLAH": 14
+    },
+    {
+        "NO": 197,
+        "KECAMATAN": "BANGIL",
+        "KELURAHAN": "KOLURSARI",
+        "JUMLAH": 10
+    },
+    {
+        "NO": 198,
+        "KECAMATAN": "BANGIL",
+        "KELURAHAN": "KIDULDALEM",
+        "JUMLAH": 14
+    },
+    {
+        "NO": 199,
+        "KECAMATAN": "BANGIL",
+        "KELURAHAN": "POGAR",
+        "JUMLAH": 12
+    },
+    {
+        "NO": 200,
+        "KECAMATAN": "BANGIL",
+        "KELURAHAN": "KAUMAN",
+        "JUMLAH": 7
+    },
+    {
+        "NO": 201,
+        "KECAMATAN": "BANGIL",
+        "KELURAHAN": "BENDOMUNGAL",
+        "JUMLAH": 6
+    },
+    {
+        "NO": 202,
+        "KECAMATAN": "BANGIL",
+        "KELURAHAN": "KERSIKAN",
+        "JUMLAH": 8
+    },
+    {
+        "NO": 203,
+        "KECAMATAN": "BANGIL",
+        "KELURAHAN": "GEMPENG",
+        "JUMLAH": 11
+    },
+    {
+        "NO": 204,
+        "KECAMATAN": "BANGIL",
+        "KELURAHAN": "DERMO",
+        "JUMLAH": 8
+    },
+    {
+        "NO": 205,
+        "KECAMATAN": "BANGIL",
+        "KELURAHAN": "LATEK",
+        "JUMLAH": 4
+    },
+    {
+        "NO": 206,
+        "KECAMATAN": "BANGIL",
+        "KELURAHAN": "KALIANYAR",
+        "JUMLAH": 6
+    },
+    {
+        "NO": 207,
+        "KECAMATAN": "BANGIL",
+        "KELURAHAN": "KALIREJO",
+        "JUMLAH": 7
+    },
+    {
+        "NO": 208,
+        "KECAMATAN": "BANGIL",
+        "KELURAHAN": "MASANGAN",
+        "JUMLAH": 4
+    },
+    {
+        "NO": 209,
+        "KECAMATAN": "BANGIL",
+        "KELURAHAN": "RACI",
+        "JUMLAH": 6
+    },
+    {
+        "NO": 210,
+        "KECAMATAN": "BANGIL",
+        "KELURAHAN": "MANARUWI",
+        "JUMLAH": 7
+    },
+    {
+        "NO": 211,
+        "KECAMATAN": "BANGIL",
+        "KELURAHAN": "TAMBAKAN",
+        "JUMLAH": 5
+    },
+    {
+        "NO": 212,
+        "KECAMATAN": "REMBANG",
+        "KELURAHAN": "KALISAT",
+        "JUMLAH": 8
+    },
+    {
+        "NO": 213,
+        "KECAMATAN": "REMBANG",
+        "KELURAHAN": "TAMPUNG",
+        "JUMLAH": 5
+    },
+    {
+        "NO": 214,
+        "KECAMATAN": "REMBANG",
+        "KELURAHAN": "PAJARAN",
+        "JUMLAH": 6
+    },
+    {
+        "NO": 215,
+        "KECAMATAN": "REMBANG",
+        "KELURAHAN": "SIYAR",
+        "JUMLAH": 4
+    },
+    {
+        "NO": 216,
+        "KECAMATAN": "REMBANG",
+        "KELURAHAN": "GENENGWARU",
+        "JUMLAH": 3
+    },
+    {
+        "NO": 217,
+        "KECAMATAN": "REMBANG",
+        "KELURAHAN": "KANIGORO",
+        "JUMLAH": 3
+    },
+    {
+        "NO": 218,
+        "KECAMATAN": "REMBANG",
+        "KELURAHAN": "SUMBERGLAGAH",
+        "JUMLAH": 3
+    },
+    {
+        "NO": 219,
+        "KECAMATAN": "REMBANG",
+        "KELURAHAN": "KRENGIH",
+        "JUMLAH": 3
+    },
+    {
+        "NO": 220,
+        "KECAMATAN": "REMBANG",
+        "KELURAHAN": "REMBANG",
+        "JUMLAH": 9
+    },
+    {
+        "NO": 221,
+        "KECAMATAN": "REMBANG",
+        "KELURAHAN": "ORO-OROBULU",
+        "JUMLAH": 5
+    },
+    {
+        "NO": 222,
+        "KECAMATAN": "REMBANG",
+        "KELURAHAN": "KEDUNG BANTENG",
+        "JUMLAH": 6
+    },
+    {
+        "NO": 223,
+        "KECAMATAN": "REMBANG",
+        "KELURAHAN": "ORO-ORO OMBOWETAN",
+        "JUMLAH": 10
+    },
+    {
+        "NO": 224,
+        "KECAMATAN": "REMBANG",
+        "KELURAHAN": "ORO-ORO OMBOKULON",
+        "JUMLAH": 9
+    },
+    {
+        "NO": 225,
+        "KECAMATAN": "REMBANG",
+        "KELURAHAN": "PEKOREN",
+        "JUMLAH": 8
+    },
+    {
+        "NO": 226,
+        "KECAMATAN": "REMBANG",
+        "KELURAHAN": "PEJANGKUNGAN",
+        "JUMLAH": 3
+    },
+    {
+        "NO": 227,
+        "KECAMATAN": "REMBANG",
+        "KELURAHAN": "PANDEAN",
+        "JUMLAH": 4
+    },
+    {
+        "NO": 228,
+        "KECAMATAN": "REMBANG",
+        "KELURAHAN": "MOJOPARON",
+        "JUMLAH": 5
+    },
+    {
+        "NO": 229,
+        "KECAMATAN": "KRATON",
+        "KELURAHAN": "PUKUL",
+        "JUMLAH": 4
+    },
+    {
+        "NO": 230,
+        "KECAMATAN": "KRATON",
+        "KELURAHAN": "GAMBIRKUNING",
+        "JUMLAH": 5
+    },
+    {
+        "NO": 231,
+        "KECAMATAN": "KRATON",
+        "KELURAHAN": "MULYOREJO",
+        "JUMLAH": 5
+    },
+    {
+        "NO": 232,
+        "KECAMATAN": "KRATON",
+        "KELURAHAN": "KEBOTOHAN",
+        "JUMLAH": 5
+    },
+    {
+        "NO": 233,
+        "KECAMATAN": "KRATON",
+        "KELURAHAN": "NGABAR",
+        "JUMLAH": 4
+    },
+    {
+        "NO": 234,
+        "KECAMATAN": "KRATON",
+        "KELURAHAN": "SLAMBRIT",
+        "JUMLAH": 3
+    },
+    {
+        "NO": 235,
+        "KECAMATAN": "KRATON",
+        "KELURAHAN": "JERUK",
+        "JUMLAH": 3
+    },
+    {
+        "NO": 236,
+        "KECAMATAN": "KRATON",
+        "KELURAHAN": "KLAMPISREJO",
+        "JUMLAH": 4
+    },
+    {
+        "NO": 237,
+        "KECAMATAN": "KRATON",
+        "KELURAHAN": "PLINGGISAN",
+        "JUMLAH": 4
+    },
+    {
+        "NO": 238,
+        "KECAMATAN": "KRATON",
+        "KELURAHAN": "TAMBAKSARI",
+        "JUMLAH": 4
+    },
+    {
+        "NO": 239,
+        "KECAMATAN": "KRATON",
+        "KELURAHAN": "DHOMPO",
+        "JUMLAH": 3
+    },
+    {
+        "NO": 240,
+        "KECAMATAN": "KRATON",
+        "KELURAHAN": "NGEMPIT",
+        "JUMLAH": 4
+    },
+    {
+        "NO": 241,
+        "KECAMATAN": "KRATON",
+        "KELURAHAN": "SIDOGIRI",
+        "JUMLAH": 6
+    },
+    {
+        "NO": 242,
+        "KECAMATAN": "KRATON",
+        "KELURAHAN": "KARANGANYAR",
+        "JUMLAH": 4
+    },
+    {
+        "NO": 243,
+        "KECAMATAN": "KRATON",
+        "KELURAHAN": "SELOTAMBAK",
+        "JUMLAH": 5
+    },
+    {
+        "NO": 244,
+        "KECAMATAN": "KRATON",
+        "KELURAHAN": "CURAHDUKUH",
+        "JUMLAH": 8
+    },
+    {
+        "NO": 245,
+        "KECAMATAN": "KRATON",
+        "KELURAHAN": "REJOSARI",
+        "JUMLAH": 5
+    },
+    {
+        "NO": 246,
+        "KECAMATAN": "KRATON",
+        "KELURAHAN": "ASEM KANDANG",
+        "JUMLAH": 4
+    },
+    {
+        "NO": 247,
+        "KECAMATAN": "KRATON",
+        "KELURAHAN": "TAMBAK REJO",
+        "JUMLAH": 5
+    },
+    {
+        "NO": 248,
+        "KECAMATAN": "KRATON",
+        "KELURAHAN": "KALIREJO",
+        "JUMLAH": 10
+    },
+    {
+        "NO": 249,
+        "KECAMATAN": "KRATON",
+        "KELURAHAN": "SEMARE",
+        "JUMLAH": 4
+    },
+    {
+        "NO": 250,
+        "KECAMATAN": "KRATON",
+        "KELURAHAN": "KRATON",
+        "JUMLAH": 5
+    },
+    {
+        "NO": 251,
+        "KECAMATAN": "KRATON",
+        "KELURAHAN": "PULOKERTO",
+        "JUMLAH": 5
+    },
+    {
+        "NO": 252,
+        "KECAMATAN": "KRATON",
+        "KELURAHAN": "BENDUNGAN",
+        "JUMLAH": 8
+    },
+    {
+        "NO": 253,
+        "KECAMATAN": "KRATON",
+        "KELURAHAN": "GERONGAN",
+        "JUMLAH": 5
+    },
+    {
+        "NO": 254,
+        "KECAMATAN": "POHJENTREK",
+        "KELURAHAN": "SUSUKAN REJO",
+        "JUMLAH": 5
+    },
+    {
+        "NO": 255,
+        "KECAMATAN": "POHJENTREK",
+        "KELURAHAN": "WARUNGDOWO",
+        "JUMLAH": 9
+    },
+    {
+        "NO": 256,
+        "KECAMATAN": "POHJENTREK",
+        "KELURAHAN": "PLERET",
+        "JUMLAH": 6
+    },
+    {
+        "NO": 257,
+        "KECAMATAN": "POHJENTREK",
+        "KELURAHAN": "PARASREJO",
+        "JUMLAH": 5
+    },
+    {
+        "NO": 258,
+        "KECAMATAN": "POHJENTREK",
+        "KELURAHAN": "LOGOWOK",
+        "JUMLAH": 3
+    },
+    {
+        "NO": 259,
+        "KECAMATAN": "POHJENTREK",
+        "KELURAHAN": "TIDU",
+        "JUMLAH": 3
+    },
+    {
+        "NO": 260,
+        "KECAMATAN": "POHJENTREK",
+        "KELURAHAN": "SUNGIWETAN",
+        "JUMLAH": 5
+    },
+    {
+        "NO": 261,
+        "KECAMATAN": "POHJENTREK",
+        "KELURAHAN": "SUNGIKULON",
+        "JUMLAH": 5
+    },
+    {
+        "NO": 262,
+        "KECAMATAN": "POHJENTREK",
+        "KELURAHAN": "SUKOREJO",
+        "JUMLAH": 3
+    },
+    {
+        "NO": 263,
+        "KECAMATAN": "GONDANGWETAN",
+        "KELURAHAN": "GONDANG WETAN",
+        "JUMLAH": 5
+    },
+    {
+        "NO": 264,
+        "KECAMATAN": "GONDANGWETAN",
+        "KELURAHAN": "TEBAS",
+        "JUMLAH": 4
+    },
+    {
+        "NO": 265,
+        "KECAMATAN": "GONDANGWETAN",
+        "KELURAHAN": "BRAMBANG",
+        "JUMLAH": 4
+    },
+    {
+        "NO": 266,
+        "KECAMATAN": "GONDANGWETAN",
+        "KELURAHAN": "BAYEMAN",
+        "JUMLAH": 6
+    },
+    {
+        "NO": 267,
+        "KECAMATAN": "GONDANGWETAN",
+        "KELURAHAN": "KEBON CANDI",
+        "JUMLAH": 3
+    },
+    {
+        "NO": 268,
+        "KECAMATAN": "GONDANGWETAN",
+        "KELURAHAN": "TENGGILIS REJO",
+        "JUMLAH": 4
+    },
+    {
+        "NO": 269,
+        "KECAMATAN": "GONDANGWETAN",
+        "KELURAHAN": "WONOJATI",
+        "JUMLAH": 4
+    },
+    {
+        "NO": 270,
+        "KECAMATAN": "GONDANGWETAN",
+        "KELURAHAN": "WONOSARI",
+        "JUMLAH": 5
+    },
+    {
+        "NO": 271,
+        "KECAMATAN": "GONDANGWETAN",
+        "KELURAHAN": "KERSIKAN",
+        "JUMLAH": 3
+    },
+    {
+        "NO": 272,
+        "KECAMATAN": "GONDANGWETAN",
+        "KELURAHAN": "KARANGSENTUL",
+        "JUMLAH": 11
+    },
+    {
+        "NO": 273,
+        "KECAMATAN": "GONDANGWETAN",
+        "KELURAHAN": "GAYAM",
+        "JUMLAH": 4
+    },
+    {
+        "NO": 274,
+        "KECAMATAN": "GONDANGWETAN",
+        "KELURAHAN": "LAJUK",
+        "JUMLAH": 2
+    },
+    {
+        "NO": 275,
+        "KECAMATAN": "GONDANGWETAN",
+        "KELURAHAN": "KALIREJO",
+        "JUMLAH": 5
+    },
+    {
+        "NO": 276,
+        "KECAMATAN": "GONDANGWETAN",
+        "KELURAHAN": "PATEGUHAN",
+        "JUMLAH": 3
+    },
+    {
+        "NO": 277,
+        "KECAMATAN": "GONDANGWETAN",
+        "KELURAHAN": "GROGOL",
+        "JUMLAH": 3
+    },
+    {
+        "NO": 278,
+        "KECAMATAN": "GONDANGWETAN",
+        "KELURAHAN": "PEKANGKUNGAN",
+        "JUMLAH": 3
+    },
+    {
+        "NO": 279,
+        "KECAMATAN": "GONDANGWETAN",
+        "KELURAHAN": "RANGGEH",
+        "JUMLAH": 3
+    },
+    {
+        "NO": 280,
+        "KECAMATAN": "GONDANGWETAN",
+        "KELURAHAN": "SEKAR PUTIH",
+        "JUMLAH": 3
+    },
+    {
+        "NO": 281,
+        "KECAMATAN": "GONDANGWETAN",
+        "KELURAHAN": "BAJANGAN",
+        "JUMLAH": 4
+    },
+    {
+        "NO": 282,
+        "KECAMATAN": "GONDANGWETAN",
+        "KELURAHAN": "GONDANGREJO",
+        "JUMLAH": 5
+    },
+    {
+        "NO": 283,
+        "KECAMATAN": "WINONGAN",
+        "KELURAHAN": "MINGGIR",
+        "JUMLAH": 4
+    },
+    {
+        "NO": 284,
+        "KECAMATAN": "WINONGAN",
+        "KELURAHAN": "KARANG TENGAH",
+        "JUMLAH": 3
+    },
+    {
+        "NO": 285,
+        "KECAMATAN": "WINONGAN",
+        "KELURAHAN": "KEDUNGREJO",
+        "JUMLAH": 5
+    },
+    {
+        "NO": 286,
+        "KECAMATAN": "WINONGAN",
+        "KELURAHAN": "UMBULAN",
+        "JUMLAH": 3
+    },
+    {
+        "NO": 287,
+        "KECAMATAN": "WINONGAN",
+        "KELURAHAN": "SIDEPAN",
+        "JUMLAH": 2
+    },
+    {
+        "NO": 288,
+        "KECAMATAN": "WINONGAN",
+        "KELURAHAN": "SRUWI",
+        "JUMLAH": 3
+    },
+    {
+        "NO": 289,
+        "KECAMATAN": "WINONGAN",
+        "KELURAHAN": "JELADRI",
+        "JUMLAH": 3
+    },
+    {
+        "NO": 290,
+        "KECAMATAN": "WINONGAN",
+        "KELURAHAN": "SUMBERREJO",
+        "JUMLAH": 6
+    },
+    {
+        "NO": 291,
+        "KECAMATAN": "WINONGAN",
+        "KELURAHAN": "PRODO",
+        "JUMLAH": 3
+    },
+    {
+        "NO": 292,
+        "KECAMATAN": "WINONGAN",
+        "KELURAHAN": "LEBAK",
+        "JUMLAH": 3
+    },
+    {
+        "NO": 293,
+        "KECAMATAN": "WINONGAN",
+        "KELURAHAN": "MENYARIK",
+        "JUMLAH": 4
+    },
+    {
+        "NO": 294,
+        "KECAMATAN": "WINONGAN",
+        "KELURAHAN": "KANDUNG",
+        "JUMLAH": 2
+    },
+    {
+        "NO": 295,
+        "KECAMATAN": "WINONGAN",
+        "KELURAHAN": "MENDALAN",
+        "JUMLAH": 5
+    },
+    {
+        "NO": 296,
+        "KECAMATAN": "WINONGAN",
+        "KELURAHAN": "PENATAAN",
+        "JUMLAH": 3
+    },
+    {
+        "NO": 297,
+        "KECAMATAN": "WINONGAN",
+        "KELURAHAN": "WINONGAN KIDUL",
+        "JUMLAH": 3
+    },
+    {
+        "NO": 298,
+        "KECAMATAN": "WINONGAN",
+        "KELURAHAN": "BANDARAN",
+        "JUMLAH": 4
+    },
+    {
+        "NO": 299,
+        "KECAMATAN": "WINONGAN",
+        "KELURAHAN": "WINONGAN LOR",
+        "JUMLAH": 4
+    },
+    {
+        "NO": 300,
+        "KECAMATAN": "WINONGAN",
+        "KELURAHAN": "GADING",
+        "JUMLAH": 5
+    },
+    {
+        "NO": 301,
+        "KECAMATAN": "GRATI",
+        "KELURAHAN": "GRATITUNON",
+        "JUMLAH": 8
+    },
+    {
+        "NO": 302,
+        "KECAMATAN": "GRATI",
+        "KELURAHAN": "KEBONREJO",
+        "JUMLAH": 5
+    },
+    {
+        "NO": 303,
+        "KECAMATAN": "GRATI",
+        "KELURAHAN": "KARANGLO",
+        "JUMLAH": 5
+    },
+    {
+        "NO": 304,
+        "KECAMATAN": "GRATI",
+        "KELURAHAN": "REBALAS",
+        "JUMLAH": 10
+    },
+    {
+        "NO": 305,
+        "KECAMATAN": "GRATI",
+        "KELURAHAN": "PLOSOSARI",
+        "JUMLAH": 10
+    },
+    {
+        "NO": 306,
+        "KECAMATAN": "GRATI",
+        "KELURAHAN": "KALIPANG",
+        "JUMLAH": 11
+    },
+    {
+        "NO": 307,
+        "KECAMATAN": "GRATI",
+        "KELURAHAN": "TREWUNG",
+        "JUMLAH": 3
+    },
+    {
+        "NO": 308,
+        "KECAMATAN": "GRATI",
+        "KELURAHAN": "KAMBINGANREJO",
+        "JUMLAH": 4
+    },
+    {
+        "NO": 309,
+        "KECAMATAN": "GRATI",
+        "KELURAHAN": "KARANGKLIWON",
+        "JUMLAH": 3
+    },
+    {
+        "NO": 310,
+        "KECAMATAN": "GRATI",
+        "KELURAHAN": "KEDAWUNGKULON",
+        "JUMLAH": 8
+    },
+    {
+        "NO": 311,
+        "KECAMATAN": "GRATI",
+        "KELURAHAN": "KEDAWUNGWETAN",
+        "JUMLAH": 11
+    },
+    {
+        "NO": 312,
+        "KECAMATAN": "GRATI",
+        "KELURAHAN": "SUMBERAGUNG",
+        "JUMLAH": 5
+    },
+    {
+        "NO": 313,
+        "KECAMATAN": "GRATI",
+        "KELURAHAN": "RANUKLINDUNGAN",
+        "JUMLAH": 6
+    },
+    {
+        "NO": 314,
+        "KECAMATAN": "GRATI",
+        "KELURAHAN": "SUMBERDAWESARI",
+        "JUMLAH": 13
+    },
+    {
+        "NO": 315,
+        "KECAMATAN": "GRATI",
+        "KELURAHAN": "CUKURGONDANG",
+        "JUMLAH": 6
+    },
+    {
+        "NO": 316,
+        "KECAMATAN": "NGULING",
+        "KELURAHAN": "SANGANOM",
+        "JUMLAH": 4
+    },
+    {
+        "NO": 317,
+        "KECAMATAN": "NGULING",
+        "KELURAHAN": "SEBALONG",
+        "JUMLAH": 4
+    },
+    {
+        "NO": 318,
+        "KECAMATAN": "NGULING",
+        "KELURAHAN": "WOTGALIH",
+        "JUMLAH": 5
+    },
+    {
+        "NO": 319,
+        "KECAMATAN": "NGULING",
+        "KELURAHAN": "WATESTANI",
+        "JUMLAH": 5
+    },
+    {
+        "NO": 320,
+        "KECAMATAN": "NGULING",
+        "KELURAHAN": "NGULING",
+        "JUMLAH": 10
+    },
+    {
+        "NO": 321,
+        "KECAMATAN": "NGULING",
+        "KELURAHAN": "SEDARUM",
+        "JUMLAH": 6
+    },
+    {
+        "NO": 322,
+        "KECAMATAN": "NGULING",
+        "KELURAHAN": "DANDANGGENDIS",
+        "JUMLAH": 6
+    },
+    {
+        "NO": 323,
+        "KECAMATAN": "NGULING",
+        "KELURAHAN": "SUMBERANYAR",
+        "JUMLAH": 9
+    },
+    {
+        "NO": 324,
+        "KECAMATAN": "NGULING",
+        "KELURAHAN": "SUDIMULYO",
+        "JUMLAH": 5
+    },
+    {
+        "NO": 325,
+        "KECAMATAN": "NGULING",
+        "KELURAHAN": "PENUNGGUL",
+        "JUMLAH": 2
+    },
+    {
+        "NO": 326,
+        "KECAMATAN": "NGULING",
+        "KELURAHAN": "MLATEN",
+        "JUMLAH": 5
+    },
+    {
+        "NO": 327,
+        "KECAMATAN": "NGULING",
+        "KELURAHAN": "KEDAWANG",
+        "JUMLAH": 10
+    },
+    {
+        "NO": 328,
+        "KECAMATAN": "NGULING",
+        "KELURAHAN": "RANDUATI",
+        "JUMLAH": 3
+    },
+    {
+        "NO": 329,
+        "KECAMATAN": "NGULING",
+        "KELURAHAN": "KAPASAN",
+        "JUMLAH": 5
+    },
+    {
+        "NO": 330,
+        "KECAMATAN": "NGULING",
+        "KELURAHAN": "WATUPRAPAT",
+        "JUMLAH": 6
+    },
+    {
+        "NO": 331,
+        "KECAMATAN": "LEKOK",
+        "KELURAHAN": "ROWOGEMPOL",
+        "JUMLAH": 13
+    },
+    {
+        "NO": 332,
+        "KECAMATAN": "LEKOK",
+        "KELURAHAN": "GEJUGJATI",
+        "JUMLAH": 9
+    },
+    {
+        "NO": 333,
+        "KECAMATAN": "LEKOK",
+        "KELURAHAN": "ALAS TLOGO",
+        "JUMLAH": 7
+    },
+    {
+        "NO": 334,
+        "KECAMATAN": "LEKOK",
+        "KELURAHAN": "BALONGANYAR",
+        "JUMLAH": 9
+    },
+    {
+        "NO": 335,
+        "KECAMATAN": "LEKOK",
+        "KELURAHAN": "BRANANG",
+        "JUMLAH": 7
+    },
+    {
+        "NO": 336,
+        "KECAMATAN": "LEKOK",
+        "KELURAHAN": "TAMPUNG",
+        "JUMLAH": 6
+    },
+    {
+        "NO": 337,
+        "KECAMATAN": "LEKOK",
+        "KELURAHAN": "TAMBAKLEKOK",
+        "JUMLAH": 9
+    },
+    {
+        "NO": 338,
+        "KECAMATAN": "LEKOK",
+        "KELURAHAN": "JATIREJO",
+        "JUMLAH": 14
+    },
+    {
+        "NO": 339,
+        "KECAMATAN": "LEKOK",
+        "KELURAHAN": "PASINAN",
+        "JUMLAH": 11
+    },
+    {
+        "NO": 340,
+        "KECAMATAN": "LEKOK",
+        "KELURAHAN": "WATES",
+        "JUMLAH": 11
+    },
+    {
+        "NO": 341,
+        "KECAMATAN": "LEKOK",
+        "KELURAHAN": "SEMEDUSARI",
+        "JUMLAH": 5
+    },
+    {
+        "NO": 342,
+        "KECAMATAN": "REJOSO",
+        "KELURAHAN": "SADENGREJO",
+        "JUMLAH": 4
+    },
+    {
+        "NO": 343,
+        "KECAMATAN": "REJOSO",
+        "KELURAHAN": "PANDANREJO",
+        "JUMLAH": 4
+    },
+    {
+        "NO": 344,
+        "KECAMATAN": "REJOSO",
+        "KELURAHAN": "KETEGAN",
+        "JUMLAH": 2
+    },
+    {
+        "NO": 345,
+        "KECAMATAN": "REJOSO",
+        "KELURAHAN": "TOYANING",
+        "JUMLAH": 6
+    },
+    {
+        "NO": 346,
+        "KECAMATAN": "REJOSO",
+        "KELURAHAN": "ARJOSARI",
+        "JUMLAH": 6
+    },
+    {
+        "NO": 347,
+        "KECAMATAN": "REJOSO",
+        "KELURAHAN": "KAWISREJO",
+        "JUMLAH": 4
+    },
+    {
+        "NO": 348,
+        "KECAMATAN": "REJOSO",
+        "KELURAHAN": "REJOSO KIDUL",
+        "JUMLAH": 4
+    },
+    {
+        "NO": 349,
+        "KECAMATAN": "REJOSO",
+        "KELURAHAN": "MANIKREJO",
+        "JUMLAH": 3
+    },
+    {
+        "NO": 350,
+        "KECAMATAN": "REJOSO",
+        "KELURAHAN": "KARANGPANDAN",
+        "JUMLAH": 3
+    },
+    {
+        "NO": 351,
+        "KECAMATAN": "REJOSO",
+        "KELURAHAN": "SAMBIREJO",
+        "JUMLAH": 5
+    },
+    {
+        "NO": 352,
+        "KECAMATAN": "REJOSO",
+        "KELURAHAN": "KEDUNGBAKO",
+        "JUMLAH": 3
+    },
+    {
+        "NO": 353,
+        "KECAMATAN": "REJOSO",
+        "KELURAHAN": "REJOSO LOR",
+        "JUMLAH": 6
+    },
+    {
+        "NO": 354,
+        "KECAMATAN": "REJOSO",
+        "KELURAHAN": "PATUGUHAN",
+        "JUMLAH": 4
+    },
+    {
+        "NO": 355,
+        "KECAMATAN": "REJOSO",
+        "KELURAHAN": "KEMANTREN REJO",
+        "JUMLAH": 6
+    },
+    {
+        "NO": 356,
+        "KECAMATAN": "REJOSO",
+        "KELURAHAN": "SEGOROPURO",
+        "JUMLAH": 4
+    },
+    {
+        "NO": 357,
+        "KECAMATAN": "REJOSO",
+        "KELURAHAN": "JARANGAN",
+        "JUMLAH": 4
+    },
+    {
+        "NO": 358,
+        "KECAMATAN": "TOSARI",
+        "KELURAHAN": "MOROREJO",
+        "JUMLAH": 3
+    },
+    {
+        "NO": 359,
+        "KECAMATAN": "TOSARI",
+        "KELURAHAN": "PODOKOYO",
+        "JUMLAH": 4
+    },
+    {
+        "NO": 360,
+        "KECAMATAN": "TOSARI",
+        "KELURAHAN": "NGADIWONO",
+        "JUMLAH": 5
+    },
+    {
+        "NO": 361,
+        "KECAMATAN": "TOSARI",
+        "KELURAHAN": "TOSARI",
+        "JUMLAH": 6
+    },
+    {
+        "NO": 362,
+        "KECAMATAN": "TOSARI",
+        "KELURAHAN": "WONOKITRI",
+        "JUMLAH": 5
+    },
+    {
+        "NO": 363,
+        "KECAMATAN": "TOSARI",
+        "KELURAHAN": "BALEDONO",
+        "JUMLAH": 4
+    },
+    {
+        "NO": 364,
+        "KECAMATAN": "TOSARI",
+        "KELURAHAN": "SEDAENG",
+        "JUMLAH": 5
+    },
+    {
+        "NO": 365,
+        "KECAMATAN": "TOSARI",
+        "KELURAHAN": "KANDANGAN",
+        "JUMLAH": 3
+    }
+]

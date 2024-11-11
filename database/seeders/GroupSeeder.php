@@ -16,15 +16,19 @@ class GroupSeeder extends Seeder
     {
         DB::table('groups')->insert([
             [
-                'name' => 'Super Admin',
+                'name' => 'Admin Kabupaten',
                 'description' => 'Hak Akses untuk Super Admin',
             ],
             [
-                'name' => 'Admininstrator',
+                'name' => 'Kecamatan',
                 'description' => 'Hak Akses untuk Admin',
             ],
             [
-                'name' => 'User',
+                'name' => 'Desa',
+                'description' => 'Hak Akses untuk user',
+            ],
+            [
+                'name' => 'TPS',
                 'description' => 'Hak Akses untuk user',
             ],
         ]);
