@@ -20,7 +20,8 @@
                                     <th>Desa</th>
                                     <th>NIK</th>
                                     <th>Nama Lengkap</th>
-                                    <th>Alamat</th>
+                                    <th>Foto Diri</th>
+                                    <th>Foto KTP</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
@@ -41,7 +42,7 @@
                                     </tr>
                                 @empty
                                     <tr>
-                                        <td colspan="6" class="text-center">Tidak ada data.</td>
+                                        <td colspan="8" class="text-center">Tidak ada data.</td>
                                     </tr>
                                 @endforelse
                             </tbody>

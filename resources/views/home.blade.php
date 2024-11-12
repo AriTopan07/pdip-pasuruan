@@ -8,21 +8,6 @@
             font-weight: 600;
         }
     </style>
-    {{-- <style>
-        canvas {
-            display: block;
-            max-width: 100%;
-            /* Pastikan grafik tidak melebihi lebar wadah */
-            height: auto !important;
-            /* Biarkan tinggi menyesuaikan */
-        }
-
-        .card-body {
-            position: relative;
-            height: 400px;
-            /* Tetapkan tinggi minimum agar grafik terlihat baik */
-        }
-    </style> --}}
 
     <div class="page-heading">
         <h3>Dashboard</h3>
@@ -30,20 +15,26 @@
     <div class="page-content">
         <section class="section">
             @if (Auth::user()->groups()->where('group_id', 1)->exists())
-                <div class="card">
-                    <div class="card-header">
-                        <h5>Jumlah data per Kecamatan</h5>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5>Jumlah data per Kecamatan</h5>
+                            </div>
+                            <div class="card-body">
+                                <canvas id="kecamatanChart"></canvas>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card-body">
-                        <canvas id="kecamatanChart" width="1000" height="200"></canvas>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-header">
-                        <h5>Jumlah data per Desa</h5>
-                    </div>
-                    <div class="card-body">
-                        <canvas id="desaChart" width="1000" height="200"></canvas>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5>Jumlah data per Desa</h5>
+                            </div>
+                            <div class="card-body">
+                                <canvas id="desaChart"></canvas>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="card">
@@ -51,7 +42,7 @@
                         <h5>Jumlah data per TPS</h5>
                     </div>
                     <div class="card-body">
-                        <canvas id="tpsChart" width="1000" height="200"></canvas>
+                        <canvas id="tpsChart"></canvas>
                     </div>
                 </div>
             @elseif (Auth::user()->groups()->where('group_id', 2)->exists())
@@ -60,7 +51,7 @@
                         <h5>Jumlah data per Desa</h5>
                     </div>
                     <div class="card-body">
-                        <canvas id="desaChart" width="1000" height="200"></canvas>
+                        <canvas id="desaChart"></canvas>
                     </div>
                 </div>
                 <div class="card">
@@ -68,7 +59,7 @@
                         <h5>Jumlah data per TPS</h5>
                     </div>
                     <div class="card-body">
-                        <canvas id="tpsChart" width="1000" height="200"></canvas>
+                        <canvas id="tpsChart"></canvas>
                     </div>
                 </div>
             @elseif (Auth::user()->groups()->where('group_id', 3)->exists())
@@ -77,7 +68,7 @@
                         <h5>Jumlah data per TPS</h5>
                     </div>
                     <div class="card-body">
-                        <canvas id="tpsChart" width="1000" height="200"></canvas>
+                        <canvas id="tpsChart"></canvas>
                     </div>
                 </div>
             @elseif (Auth::user()->groups()->where('group_id', 4)->exists())

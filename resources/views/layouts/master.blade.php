@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laravel</title>
+    <title>DPC PDI Perjuangan Kab. Pasuruan 2024</title>
 
     <link rel="stylesheet" href="{{ asset('assets/css/main/app.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/main/app-dark.css') }}">
@@ -28,7 +28,7 @@
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="logo fs-4">
                             <a href="{{ url('/') }}">
-                                <b>Laravel</b>
+                                <b>Canvassing</b>
                                 {{-- <img src="assets/images/logo/logo.svg" alt="Logo"
                                     srcset=""> --}}
                             </a>
@@ -109,7 +109,7 @@
             <footer>
                 <div class="footer clearfix mb-0 text-muted">
                     <div class="float-start">
-                        <p>{{ date('Y') }} &copy; Laravel</p>
+                        <p>&copy; DPC PDI Perjuangan Kab. Pasuruan 2024</p>
                     </div>
                 </div>
             </footer>
