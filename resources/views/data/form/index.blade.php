@@ -18,7 +18,6 @@
                                     <th>#</th>
                                     <th>Kecamatan</th>
                                     <th>Desa</th>
-                                    <th>TPS</th>
                                     <th>NIK</th>
                                     <th>Nama Lengkap</th>
                                     <th>Alamat</th>
@@ -31,7 +30,6 @@
                                         <td>{{ $loop->iteration + ($data->currentPage() - 1) * $data->perPage() }}</td>
                                         <td>{{ $item->kecamatan }}</td>
                                         <td>{{ $item->desa }}</td>
-                                        <td>{{ $item->tps }}</td>
                                         <td>{{ $item->nik }}</td>
                                         <td>{{ $item->nama_lengkap }}</td>
                                         <td>
