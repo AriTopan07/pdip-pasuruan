@@ -114,7 +114,6 @@ class FormController extends Controller
             $data = DataDiri::create([
                 'kecamatan' => $request->kecamatan,
                 'desa' => $request->desa,
-                'tps' => $request->tps,
                 'nik' => $request->nik,
                 'nama_lengkap' => $request->nama_lengkap,
                 'foto_ktp' => $uploadedFiles['foto_ktp'] ?? null,

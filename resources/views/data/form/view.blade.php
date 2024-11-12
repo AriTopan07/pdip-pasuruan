@@ -28,11 +28,6 @@
                                 </select>
                                 <p class="invalid-feedback"></p>
                             </div>
-                            <label class="fw-bold">TPS<span class="text-danger">*</span></label>
-                            <div class="form-group">
-                                <input type="text" class="form-control" name="tps" id="tps" autocomplete="off">
-                                <p class="invalid-feedback"></p>
-                            </div>
                             <label class="fw-bold">Nama Lengkap Pemilih<span class="text-danger">*</span></label>
                             <div class="form-group">
                                 <input type="text" class="form-control" name="nama_lengkap" id="nama_lengkap"
@@ -207,7 +202,6 @@
 
                 let kecamatan = $('#kecamatan').find('option:selected').text();
                 let desa = $('#desa').find('option:selected').text();
-                let tps = $('#tps').val();
                 let nik = $('#nik').val();
                 let namaLengkap = $('#nama_lengkap').val();
                 let fotoKtp = document.getElementById('foto_ktp').files[0];
@@ -222,7 +216,6 @@
                 let formData = new FormData(this);
                 formData.append('kecamatan', kecamatan);
                 formData.append('desa', desa);
-                formData.append('tps', tps);
                 formData.append('nik', nik);
                 formData.append('nama_lengkap', namaLengkap);
                 formData.append('foto_ktp', fotoKtp);

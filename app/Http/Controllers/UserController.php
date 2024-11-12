@@ -24,7 +24,9 @@ class UserController extends Controller
     public function index(Request $request)
     {
         $menu = 'User';
-        $data = $this->userRepository->get_all();
+
+        $data = USer::get();
+
         return view('page.users', compact('data', 'menu'));
     }
 

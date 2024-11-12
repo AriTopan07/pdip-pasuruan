@@ -16,25 +16,23 @@
                     <table class="table table-striped" id="table1">
                         <thead>
                             <tr>
+                                <th>No</th>
                                 <th>Nama</th>
                                 <th>Username</th>
-                                <th>Tgl. Dibuat</th>
                                 <th>Status</th>
-                                <th>Aksi</th>
+                                {{-- <th>Aksi</th> --}}
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($data as $item)
                                 <tr>
+                                    <td>{{ $loop->iteration }}</td>
                                     <td>{{ $item->name }}</td>
                                     <td>{{ $item->username }}</td>
-                                    <td>{{ date('Y-m-d', strtotime($item->created_at)) }}</td>
                                     <td>
                                         <span class="">{{ Str::ucfirst($item->status) }}</span>
                                     </td>
-                                    <td>
-                                        {{-- {!! NavHelper::action('table', $item->id) !!} --}}
-                                    </td>
+                                    {{-- <td></td> --}}
                                 </tr>
                             @endforeach
                         </tbody>

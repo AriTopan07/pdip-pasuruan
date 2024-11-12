@@ -26,13 +26,13 @@ class UserSeeder extends Seeder
             ],
             [
                 'name' => 'Kecamatan',
-                'username' => 'admin',
+                'username' => 'kecamatan',
                 'password' => Hash::make('secret'),
                 'status' => 'active'
             ],
             [
                 'name' => 'Desa',
-                'username' => 'admin',
+                'username' => 'desa',
                 'password' => Hash::make('secret'),
                 'status' => 'active'
             ],
@@ -60,7 +60,7 @@ class UserSeeder extends Seeder
 
             // Buat akun untuk kecamatan jika belum ada
             if (!in_array($kecamatan, $processedKecamatan)) {
-                $userId = DB::table('users')->insert([
+                $userId = DB::table('users')->insertGetId([ // Gunakan insertGetId
                     'name' => $kecamatan,
                     'username' => $slugKecamatan,
                     'password' => Hash::make('password'),
@@ -68,7 +68,7 @@ class UserSeeder extends Seeder
                 ]);
 
                 DB::table('user_groups')->insert([
-                    'user_id' => $userId,
+                    'user_id' => $userId, // Gunakan ID yang baru dimasukkan
                     'group_id' => 2, // Sesuaikan group_id dengan kebutuhan Anda
                 ]);
 
@@ -78,7 +78,7 @@ class UserSeeder extends Seeder
             // Buat akun untuk kelurahan jika belum ada
             $kelurahanIdentifier = "{$kelurahan}-{$kecamatan}";
             if (!in_array($kelurahanIdentifier, $processedKelurahan)) {
-                $userId = DB::table('users')->insert([
+                $userId = DB::table('users')->insertGetId([ // Gunakan insertGetId
                     'name' => $kelurahan,
                     'username' => "{$slugKelurahan}-{$slugKecamatan}",
                     'password' => Hash::make('password'),
@@ -86,7 +86,7 @@ class UserSeeder extends Seeder
                 ]);
 
                 DB::table('user_groups')->insert([
-                    'user_id' => $userId,
+                    'user_id' => $userId, // Gunakan ID yang baru dimasukkan
                     'group_id' => 3, // Sesuaikan group_id dengan kebutuhan Anda
                 ]);
 
@@ -95,7 +95,7 @@ class UserSeeder extends Seeder
 
             // Buat akun TPS per kelurahan dengan nomor TPS dari JUMLAH
             for ($i = 1; $i <= $row['JUMLAH']; $i++) {
-                $tps = DB::table('users')->insert([
+                $tpsId = DB::table('users')->insertGetId([ // Gunakan insertGetId
                     'name' => "TPS {$i} {$kelurahan} {$kecamatan}",
                     'username' => "tps-{$i}-{$slugKelurahan}-{$slugKecamatan}",
                     'password' => Hash::make('password'),
@@ -103,7 +103,7 @@ class UserSeeder extends Seeder
                 ]);
 
                 DB::table('user_groups')->insert([
-                    'user_id' => $tps,
+                    'user_id' => $tpsId, // Gunakan ID yang baru dimasukkan
                     'group_id' => 4, // Sesuaikan group_id dengan kebutuhan Anda
                 ]);
             }
