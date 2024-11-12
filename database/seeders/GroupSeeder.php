@@ -17,19 +17,19 @@ class GroupSeeder extends Seeder
         DB::table('groups')->insert([
             [
                 'name' => 'Admin Kabupaten',
-                'description' => 'Hak Akses untuk Super Admin',
+                'description' => 'Hak Akses untuk Kab',
             ],
             [
                 'name' => 'Kecamatan',
-                'description' => 'Hak Akses untuk Admin',
+                'description' => 'Hak Akses untuk kecamatan',
             ],
             [
                 'name' => 'Desa',
-                'description' => 'Hak Akses untuk user',
+                'description' => 'Hak Akses untuk desa',
             ],
             [
                 'name' => 'TPS',
-                'description' => 'Hak Akses untuk user',
+                'description' => 'Hak Akses untuk tps',
             ],
         ]);
     }

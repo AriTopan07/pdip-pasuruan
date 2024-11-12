@@ -25,7 +25,13 @@ class UserSeeder extends Seeder
                 'status' => 'active'
             ],
             [
-                'name' => 'Administrator',
+                'name' => 'Kecamatan',
+                'username' => 'admin',
+                'password' => Hash::make('secret'),
+                'status' => 'active'
+            ],
+            [
+                'name' => 'Desa',
                 'username' => 'admin',
                 'password' => Hash::make('secret'),
                 'status' => 'active'
