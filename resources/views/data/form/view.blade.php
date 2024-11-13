@@ -244,7 +244,7 @@
                             $('.invalid-feedback').removeClass('invalid-feedback').html('');
                             $("input[type='text'], select, input[type='number'], input[type='file'], textarea")
                                 .removeClass('is-invalid');
-                            alert("Data berhasil disimpan!"); // Alert jika berhasil
+                            // alert("Data berhasil disimpan!"); // Alert jika berhasil
                         } else {
                             $('.invalid-feedback').removeClass('invalid-feedback').html('');
                             $("input[type='text'], select, input[type='number'], input[type='file'], textarea")
