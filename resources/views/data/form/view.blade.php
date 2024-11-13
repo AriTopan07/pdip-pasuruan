@@ -250,11 +250,19 @@
                             $("input[type='text'], select, input[type='number'], input[type='file'], textarea")
                                 .removeClass('is-invalid');
 
-                            $.each(data.errors, function(field, errorMessage) {
-                                $("#" + field).addClass('is-invalid')
-                                    .siblings('p')
-                                    .addClass('invalid-feedback')
-                                    .html(errorMessage[0]);
+                            Swal.mixin({
+                                toast: true,
+                                position: 'top-end',
+                                showConfirmButton: false,
+                                timer: 3000,
+                                timerProgressBar: true,
+                                didOpen: (toast) => {
+                                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                                }
+                            }).fire({
+                                icon: 'error',
+                                text: data.message,
                             });
 
                             // Tampilkan alert error
