@@ -17,7 +17,7 @@
                             <label class="fw-bold">Kecamatan<span class="text-danger">*wajib diisi</span></label>
                             <div class="form-group">
                                 <select name="kecamatan" id="kecamatan" class="form-control">
-                                    <option>Pilih Kecamatan</option>
+                                    <option selected disabled>Pilih Kecamatan</option>
                                 </select>
                                 <p class="invalid-feedback"></p>
                             </div>
@@ -148,13 +148,13 @@
         $(document).ready(function() {
 
             $.ajax({
-                url: "https://www.emsifa.com/api-wilayah-indonesia/api/districts/3514.json",
+                url: "/kecamatan",
                 method: "GET",
                 success: function(data) {
                     // Tambahkan opsi kecamatan ke dalam dropdown
                     data.forEach(function(kecamatan) {
                         $('#kecamatan').append(
-                            `<option value="${kecamatan.id}">${kecamatan.name}</option>`
+                            `<option value="${kecamatan}">${kecamatan}</option>`
                         );
                     });
                 },
@@ -169,10 +169,11 @@
                 var kecamatanId = $(this).val();
 
                 if (kecamatanId) {
-                    // $('#desa').empty().append('<option value="">Pilih Desa</option>'); // Reset desa
+                    $('#desa').empty().append(
+                        '<option selected disabled>Pilih Desa</option>'); // Reset desa
 
                     $.ajax({
-                        url: `https://www.emsifa.com/api-wilayah-indonesia/api/villages/${kecamatanId}.json`,
+                        url: `/desa/${kecamatanId}`,
                         method: "GET",
                         success: function(data) {
                             // Sembunyikan spinner desa setelah data berhasil diambil
@@ -180,7 +181,7 @@
 
                             data.forEach(function(desa) {
                                 $('#desa').append(
-                                    `<option value="${desa.id}">${desa.name}</option>`
+                                    `<option value="${desa.KELURAHAN}">${desa.KELURAHAN}</option>`
                                 );
                             });
                         },
