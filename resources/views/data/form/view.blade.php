@@ -111,16 +111,16 @@
             };
         }
 
-        function handleFileChange(inputId, spanId, maxSizeMB) {
+        function handleFileChange(inputId, spanId, maxSizeKB) {
             const input = document.getElementById(inputId);
             const span = document.getElementById(spanId);
 
             input.addEventListener('change', function() {
                 const file = this.files[0];
                 if (file) {
-                    if (file.size / (1024 * 1024) > maxSizeMB) {
-                        // Compress the image if it exceeds maxSizeMB
-                        compressImage(file, maxSizeMB, function(compressedBlob) {
+                    if (file.size / 1024 > maxSizeKB) { // Check if size exceeds 800KB
+                        // Compress the image if it exceeds maxSizeKB
+                        compressImage(file, maxSizeKB / 1024, function(compressedBlob) {
                             const compressedFile = new File([compressedBlob], file.name, {
                                 type: 'image/jpeg'
                             });
@@ -133,16 +133,17 @@
                         });
                     } else {
                         // No need to compress
-                        console.log("File size within limit, no compression needed:", (file.size / (1024 * 1024))
-                            .toFixed(2), "MB");
+                        console.log("File size within limit, no compression needed:", (file.size / 1024).toFixed(2),
+                            "KB");
                         span.textContent = file.name;
                     }
                 }
             });
         }
 
-        handleFileChange('foto_ktp', 'file-name-ktp', 1.5);
-        handleFileChange('foto_diri', 'file-name-diri', 1.5);
+        // Set max size to 800KB (800 * 1024 bytes)
+        handleFileChange('foto_ktp', 'file-name-ktp', 800);
+        handleFileChange('foto_diri', 'file-name-diri', 800);
     </script>
     <script>
         $(document).ready(function() {
