@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\DataDiri;
 use App\Models\GoodsReceive;
 use App\Models\Group;
 use App\Models\UserGroup;
@@ -40,6 +41,10 @@ class HomeController extends Controller
         $user = Auth::user()->id;
         $data['totalData'] = 100;
 
+        $data['dataMasuk'] = DataDiri::count();
+        $data['kecamatan'] = 24;
+        $data['desa'] = 365;
+        $data['total'] = DataDiri::count();
         $data['progresku'] = DB::table('data_diris')->where('user_id', $user)->count();
         $data['progressPercentage'] = ($data['progresku'] / $data['totalData']) * 100;
         $data['byKecamatan'] = DB::table('data_diris')
@@ -53,9 +58,11 @@ class HomeController extends Controller
             ->get();
 
         $data['byTps'] = DB::table('data_diris')
-            ->select('kecamatan', 'desa', 'tps', DB::raw('count(*) as total'))
-            ->groupBy('kecamatan', 'desa', 'tps')
+            ->join('users', 'data_diris.user_id', '=', 'users.id')
+            ->select('data_diris.kecamatan', 'data_diris.desa', 'data_diris.user_id', 'users.name as user_name', DB::raw('count(data_diris.id) as total'))
+            ->groupBy('data_diris.kecamatan', 'data_diris.desa', 'data_diris.user_id', 'users.name')
             ->get();
+
 
         // dd($data);
         return view('home', compact('data'));

@@ -16,6 +16,48 @@
         <section class="section">
             @if (Auth::user()->groups()->where('group_id', 1)->exists())
                 <div class="row">
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5>Jumlah data Masuk</h5>
+                            </div>
+                            <div class="card-body">
+                                <h2>{{ $data['dataMasuk'] }}</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5>Total Kecamatan</h5>
+                            </div>
+                            <div class="card-body">
+                                <h2>24</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5>Total Desa/kelurahan</h5>
+                            </div>
+                            <div class="card-body">
+                                <h2>365</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5>Total TPS</h5>
+                            </div>
+                            <div class="card-body">
+                                <h2>2338</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
                     <div class="col-md-6">
                         <div class="card">
                             <div class="card-header">
@@ -158,7 +200,7 @@
     </script>
     <script>
         const tpsData = @json($data['byTps']);
-        const tpsLabels = tpsData.map(item => `TPS ${item.tps} - Desa ${item.desa}, Kec ${item.kecamatan}`);
+        const tpsLabels = tpsData.map(item => `TPS ${item.user_name}`);
         const tpsValues = tpsData.map(item => item.total);
 
         const tpsBackgroundColors = tpsLabels.map(() => {
@@ -179,6 +221,23 @@
             },
             options: {
                 responsive: true,
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            title: (tooltipItems) => {
+                                // Menampilkan label hanya saat di-sorot
+                                const index = tooltipItems[0].dataIndex;
+                                return tpsLabels[index];
+                            },
+                            label: (tooltipItem) => {
+                                return `Jumlah: ${tooltipItem.raw}`;
+                            }
+                        }
+                    },
+                    legend: {
+                        display: false // Sembunyikan legenda jika tidak diperlukan
+                    }
+                },
                 scales: {
                     y: {
                         beginAtZero: true

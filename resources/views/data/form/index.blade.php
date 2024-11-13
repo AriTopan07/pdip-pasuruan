@@ -2,13 +2,13 @@
 
 @section('content')
     <div class="page-heading">
-        <h3>Data</h3>
+        <h3>Data Canvassing</h3>
     </div>
     <div class="page-content">
         <section class="section">
             <div class="card">
                 <div class="card-header">
-                    <h5>Data</h5>
+                    <h5>Data Canvassing</h5>
                 </div>
                 <div class="card-body table-responsive">
                     <div class="table-responsive">
@@ -22,7 +22,7 @@
                                     <th>Nama Lengkap</th>
                                     <th>Foto Diri</th>
                                     <th>Foto KTP</th>
-                                    <th>Aksi</th>
+                                    {{-- <th>Aksi</th> --}}
                                 </tr>
                             </thead>
                             <tbody>
