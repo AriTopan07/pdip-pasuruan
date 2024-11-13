@@ -24,7 +24,6 @@
                             <label class="fw-bold">Kelurahan/Desa<span class="text-danger">*wajib diisi</span></label>
                             <div class="form-group">
                                 <select name="desa" id="desa" class="form-control">
-                                    <option value="">Pilih Desa</option>
                                 </select>
                                 <p class="invalid-feedback"></p>
                             </div>
@@ -170,9 +169,8 @@
                 var kecamatanId = $(this).val();
 
                 if (kecamatanId) {
-                    $('#desa').empty().append('<option value="">Pilih Desa</option>'); // Reset desa
+                    // $('#desa').empty().append('<option value="">Pilih Desa</option>'); // Reset desa
 
-                    // Ambil data desa berdasarkan kecamatan yang dipilih
                     $.ajax({
                         url: `https://www.emsifa.com/api-wilayah-indonesia/api/villages/${kecamatanId}.json`,
                         method: "GET",
@@ -180,7 +178,6 @@
                             // Sembunyikan spinner desa setelah data berhasil diambil
                             $('#loading-desa').hide();
 
-                            // Tambahkan opsi desa ke dalam dropdown
                             data.forEach(function(desa) {
                                 $('#desa').append(
                                     `<option value="${desa.id}">${desa.name}</option>`
@@ -194,7 +191,7 @@
                     });
                 } else {
                     $('#desa').empty().append(
-                        '<option value="">Pilih Desa</option>'); // Reset dropdown desa
+                        '<option value="">Pilih Desa</option>');
                 }
             });
 
