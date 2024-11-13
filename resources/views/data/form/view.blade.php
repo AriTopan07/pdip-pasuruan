@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="page-heading">
-        <h3>Tambah Data Peserta</h3>
+        <h3>Tambah Data Canvassing</h3>
     </div>
     <div class="page-content">
         <section class="section">
@@ -244,6 +244,7 @@
                             $('.invalid-feedback').removeClass('invalid-feedback').html('');
                             $("input[type='text'], select, input[type='number'], input[type='file'], textarea")
                                 .removeClass('is-invalid');
+                            alert("Data berhasil disimpan!"); // Alert jika berhasil
                         } else {
                             $('.invalid-feedback').removeClass('invalid-feedback').html('');
                             $("input[type='text'], select, input[type='number'], input[type='file'], textarea")
@@ -255,13 +256,21 @@
                                     .addClass('invalid-feedback')
                                     .html(errorMessage[0]);
                             });
+
+                            // Tampilkan alert error
+                            let errorMessages = Object.values(data.errors).flat().join("\n");
+                            alert("Terjadi kesalahan input:\n" + errorMessages);
                         }
                     },
-                    error: function() {
-                        console.log('Terjadi kesalahan');
+                    error: function(xhr, status, error) {
+                        console.log('Terjadi kesalahan', error);
                         submitButton.prop('disabled', false);
                         submitButton.html(originalButtonHtml);
+
+                        // Tampilkan pesan error generik
+                        alert("Terjadi kesalahan pada sistem. Silakan coba lagi nanti.");
                     }
+
                 });
             });
 
