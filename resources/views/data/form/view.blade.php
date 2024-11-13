@@ -17,7 +17,7 @@
                             <label class="fw-bold">Kecamatan<span class="text-danger">*wajib diisi</span></label>
                             <div class="form-group">
                                 <select name="kecamatan" id="kecamatan" class="form-control">
-                                    <option value="">Pilih Kecamatan</option>
+                                    <option>Pilih Kecamatan</option>
                                 </select>
                                 <p class="invalid-feedback"></p>
                             </div>
