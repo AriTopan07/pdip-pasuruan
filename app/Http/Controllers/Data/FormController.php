@@ -33,16 +33,16 @@ class FormController extends Controller
 
         switch ($groupId) {
             case 1:
-                $data = $query->paginate(10);
+                $data = $query->paginate(50);
                 break;
             case 2:
-                $data = $query->where('kecamatan', $user->name)->paginate(10);
+                $data = $query->where('kecamatan', $user->name)->paginate(50);
                 break;
             case 3:
-                $data = $query->where('desa', $user->name)->paginate(10);
+                $data = $query->where('desa', $user->name)->paginate(50);
                 break;
             case 4:
-                $data = $query->where('user_id', $user->id)->paginate(10);
+                $data = $query->where('user_id', $user->id)->paginate(50);
                 break;
             default:
                 return response()->json(['error' => 'Grup tidak valid'], 400);
