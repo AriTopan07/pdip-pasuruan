@@ -200,7 +200,7 @@
     </script>
     <script>
         const tpsData = @json($data['byTps']);
-        const tpsLabels = tpsData.map(item => `TPS ${item.user_name}`);
+        const tpsLabels = tpsData.map(item => `${item.user_name}`);
         const tpsValues = tpsData.map(item => item.total);
 
         const tpsBackgroundColors = tpsLabels.map(() => {

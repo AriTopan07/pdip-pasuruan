@@ -20,8 +20,8 @@
                                     <th>Desa</th>
                                     <th>NIK</th>
                                     <th>Nama Lengkap</th>
-                                    <th>Foto Diri</th>
                                     <th>Foto KTP</th>
+                                    <th>Foto Diri</th>
                                     {{-- <th>Aksi</th> --}}
                                 </tr>
                             </thead>

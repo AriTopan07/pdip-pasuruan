@@ -14,32 +14,32 @@
                     <form action="" id="tambahData" method="" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
-                            <label class="fw-bold">Kecamatan<span class="text-danger">*</span></label>
+                            <label class="fw-bold">Kecamatan<span class="text-danger">*wajib diisi</span></label>
                             <div class="form-group">
                                 <select name="kecamatan" id="kecamatan" class="form-control">
                                     <option value="">Pilih Kecamatan</option>
                                 </select>
                                 <p class="invalid-feedback"></p>
                             </div>
-                            <label class="fw-bold">Kelurahan/Desa<span class="text-danger">*</span></label>
+                            <label class="fw-bold">Kelurahan/Desa<span class="text-danger">*wajib diisi</span></label>
                             <div class="form-group">
                                 <select name="desa" id="desa" class="form-control">
                                     <option value="">Pilih Desa</option>
                                 </select>
                                 <p class="invalid-feedback"></p>
                             </div>
-                            <label class="fw-bold">Nama Lengkap Pemilih<span class="text-danger">*</span></label>
+                            <label class="fw-bold">Nama Lengkap Pemilih<span class="text-danger">*wajib diisi</span></label>
                             <div class="form-group">
                                 <input type="text" class="form-control" name="nama_lengkap" id="nama_lengkap"
                                     autocomplete="off">
                                 <p class="invalid-feedback"></p>
                             </div>
-                            <label class="fw-bold">NIK Pemilih</label>
+                            {{-- <label class="fw-bold">NIK Pemilih (tidak wajib)</label>
                             <div class="form-group">
                                 <input type="text" class="form-control" name="nik" id="nik" autocomplete="off">
                                 <p class="invalid-feedback"></p>
-                            </div>
-                            <label class="fw-bold">Foto KTP</label>
+                            </div> --}}
+                            {{-- <label class="fw-bold">Foto KTP (tidak wajib)</label>
                             <div class="form-group">
                                 <input type="file" name="foto_ktp" id="foto_ktp" accept="image/*"
                                     style="display: none;">
@@ -50,14 +50,14 @@
                                 <span id="file-name-ktp"
                                     style="margin-left: 10px; font-weight: bold; font-size: 14px;"></span>
                                 <p class="invalid-feedback"></p>
-                            </div>
-                            <label class="fw-bold">Foto Diri<span class="text-danger">*</span></label>
+                            </div> --}}
+                            <label class="fw-bold">Foto Diri<span class="text-danger">*wajib diisi</span></label>
                             <div class="form-group">
                                 <input type="file" name="foto_diri" id="foto_diri" accept="image/*"
                                     style="display: none;">
                                 <button type="button" class="btn btn-primary"
                                     onclick="document.getElementById('foto_diri').click();">
-                                    Upload/Ambil Foto KTP
+                                    Upload/Ambil Foto Diri
                                 </button>
                                 <span id="file-name-diri"
                                     style="margin-left: 10px; font-weight: bold; ; font-size: 14px;"></span>
