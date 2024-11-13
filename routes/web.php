@@ -11,6 +11,7 @@ use App\Http\Controllers\ActionController;
 use App\Http\Controllers\ButtonController;
 use App\Http\Controllers\Data\FormController;
 use App\Http\Controllers\LandingPageController;
+use App\Http\Controllers\WilayahController;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Route;
 
@@ -65,4 +66,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/form-tambah-data', [FormController::class, 'view'])->name('formulir.view');
     Route::post('/form-tambah-data', [FormController::class, 'store'])->name('formulir.store');
     Route::get('/view/data', [FormController::class, 'data'])->name('formulir.index');
+
+    Route::get('/kecamatan', [WilayahController::class, 'semuaKecamatan']);
+    Route::get('/desa/{kecamatan}', [WilayahController::class, 'desaByKecamatan']);
 });
