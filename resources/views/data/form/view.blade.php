@@ -215,20 +215,18 @@
                     contentType: false,
                     success: function(data) {
                         submitButton.prop('disabled', false).html(originalButtonHtml);
-
                         if (data.success) {
                             window.location.reload();
                         } else {
                             showValidationErrors(data.errors);
                         }
                     },
-                    error: function(xhr) {
-                        Swal.fire({
-                            icon: 'error',
-                            title: 'Kesalahan',
-                            text: xhr.responseJSON.message ||
-                                'Terjadi kesalahan pada sistem.',
-                        });
+                    error: function(xhr, status, error) {
+                        console.log('Terjadi kesalahan', error);
+                        submitButton.prop('disabled', false);
+                        submitButton.html(originalButtonHtml);
+
+                        alert(error);
                     }
                 });
 

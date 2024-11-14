@@ -68,7 +68,7 @@ class FormController extends Controller
             'kecamatan' => 'required',
             'desa' => 'required',
             'nama_lengkap' => 'required',
-            'foto_diri' => 'required',
+            'foto_diri' => 'required|image',
         ], $pesan);
 
         if ($validator->fails()) {
