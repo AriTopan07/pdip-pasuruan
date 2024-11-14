@@ -203,7 +203,7 @@
 
         const ctxTps = document.getElementById('tpsChart').getContext('2d');
         new Chart(ctxTps, {
-            type: 'bar',
+            type: 'bar', // Tetap menggunakan "bar"
             data: {
                 labels: tpsLabels,
                 datasets: [{
@@ -214,12 +214,12 @@
                 }]
             },
             options: {
+                indexAxis: 'y', // Mengatur sumbu menjadi horizontal
                 responsive: true,
                 plugins: {
                     tooltip: {
                         callbacks: {
                             title: (tooltipItems) => {
-                                // Menampilkan label hanya saat di-sorot
                                 const index = tooltipItems[0].dataIndex;
                                 return tpsLabels[index];
                             },
@@ -233,8 +233,11 @@
                     }
                 },
                 scales: {
-                    y: {
+                    x: { // Sumbu x untuk nilai
                         beginAtZero: true
+                    },
+                    y: { // Sumbu y untuk label
+                        beginAtZero: false
                     }
                 }
             }
