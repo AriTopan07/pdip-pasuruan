@@ -9,6 +9,7 @@
             <div class="card">
                 <div class="card-header">
                     <h5>Tampilkan data berdasarkan Kec/Desa</h5>
+                    <a href="{{ url('/export-data-diri') }}" class="btn btn-primary mb-3">Download Excel Semua Data</a>
                     <form action="{{ route('formulir.index') }}">
                         <div class="row">
                             <div class="col-lg-2">

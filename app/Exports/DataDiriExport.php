@@ -30,9 +30,9 @@ class DataDiriExport implements FromCollection, WithHeadings, WithMapping
     {
         // Mapping data agar sesuai dengan urutan kolom yang diinginkan
         return [
-            $dataDiri->user->nama,  // Kolom nama dari tabel users
             $dataDiri->kecamatan,
             $dataDiri->desa,
+            $dataDiri->user->name,  // Kolom nama dari tabel users
             $dataDiri->foto_diri,
         ];
     }
