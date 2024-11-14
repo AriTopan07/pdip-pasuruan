@@ -14,6 +14,8 @@ use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\WilayahController;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Route;
+use App\Exports\DataDiriExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 // Route::get('/', [LandingPageController::class, 'index'])->name('landing.index');
 
@@ -69,4 +71,8 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/kecamatan', [WilayahController::class, 'semuaKecamatan']);
     Route::get('/desa/{kecamatan}', [WilayahController::class, 'desaByKecamatan']);
+    
+    Route::get('/export-data-diri', function () {
+        return Excel::download(new DataDiriExport, 'data_diri.xlsx');
+    });
 });
