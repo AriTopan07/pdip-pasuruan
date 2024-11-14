@@ -276,7 +276,7 @@
                         submitButton.html(originalButtonHtml);
 
                         // Tampilkan pesan error generik
-                        alert("Terjadi kesalahan pada sistem. Silakan coba lagi nanti.");
+                        alert(error);
                     }
 
                 });
