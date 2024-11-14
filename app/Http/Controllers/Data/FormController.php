@@ -20,7 +20,7 @@ class FormController extends Controller
         $this->middleware('auth');
     }
 
-    public function data()
+    public function data(Request $request)
     {
         Session::put('menu_active', '/view/data');
         $user = auth()->user();
@@ -33,8 +33,24 @@ class FormController extends Controller
 
         switch ($groupId) {
             case 1:
-                $data = $query->paginate(50);
+                if ($request->has('kecamatan') || $request->has('desa')) {
+                    $kecamatan = $request->input('kecamatan');
+                    $desa = $request->input('desa');
+
+                    if (!empty($kecamatan)) {
+                        $query->where('kecamatan', $kecamatan);
+                    }
+
+                    if (!empty($desa)) {
+                        $query->where('desa', $desa);
+                    }
+
+                    $data = $query->paginate(50);
+                } else {
+                    $data = $query->paginate(50);
+                }
                 break;
+
             case 2:
                 $data = $query->where('kecamatan', $user->name)->paginate(50);
                 break;

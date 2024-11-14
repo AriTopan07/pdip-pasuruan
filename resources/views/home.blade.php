@@ -78,7 +78,7 @@
                         <h5>Jumlah data per TPS</h5>
                     </div>
                     <div class="card-body">
-                        <canvas id="tpsChart"></canvas>
+                        <canvas id="tpsChart" height="800"></canvas>
                     </div>
                 </div>
             @elseif (Auth::user()->groups()->where('group_id', 2)->exists())
@@ -95,7 +95,7 @@
                         <h5>Jumlah data per TPS</h5>
                     </div>
                     <div class="card-body">
-                        <canvas id="tpsChart"></canvas>
+                        <canvas id="tpsChart" height="800"></canvas>
                     </div>
                 </div>
             @elseif (Auth::user()->groups()->where('group_id', 3)->exists())
@@ -104,7 +104,7 @@
                         <h5>Jumlah data per TPS</h5>
                     </div>
                     <div class="card-body">
-                        <canvas id="tpsChart"></canvas>
+                        <canvas id="tpsChart" height="800"></canvas>
                     </div>
                 </div>
             @elseif (Auth::user()->groups()->where('group_id', 4)->exists())
