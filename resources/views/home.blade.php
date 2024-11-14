@@ -135,11 +135,19 @@
 
 @push('js')
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
     <script>
-        const kecamatanLabels = @json($data['byKecamatan']->pluck('kecamatan'));
-        const kecamatanValues = @json($data['byKecamatan']->pluck('total'));
+        // Ambil data dari PHP
+        const kecamatanData = @json($data['byKecamatan']);
+        const kecamatanLabels = kecamatanData.map(item => item.kecamatan);
+        const kecamatanValues = kecamatanData.map(item => item.total);
 
-        // Render chart
+        // Buat warna background secara dinamis
+        const kecamatanBackgroundColors = kecamatanLabels.map(() => {
+            return `rgba(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, 0.5)`;
+        });
+
+        // Inisialisasi Chart.js
         const ctx = document.getElementById('kecamatanChart').getContext('2d');
         new Chart(ctx, {
             type: 'bar',
@@ -148,20 +156,43 @@
                 datasets: [{
                     label: 'Jumlah Data per Kecamatan',
                     data: kecamatanValues,
-                    backgroundColor: 'rgba(255, 0, 0, 0.6)',
+                    backgroundColor: kecamatanBackgroundColors,
                     borderWidth: 1
                 }]
             },
             options: {
                 responsive: true,
+                plugins: {
+                    legend: {
+                        display: true
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(tooltipItem) {
+                                return `${tooltipItem.raw} data`;
+                            }
+                        }
+                    },
+                    datalabels: { // Konfigurasi untuk menampilkan jumlah data
+                        anchor: 'end',
+                        align: 'top',
+                        formatter: (value) => value, // Menampilkan nilai data
+                        font: {
+                            size: 12
+                        },
+                        color: '#000' // Warna label
+                    }
+                },
                 scales: {
                     y: {
                         beginAtZero: true
                     }
                 }
-            }
+            },
+            plugins: [ChartDataLabels] // Aktifkan plugin
         });
     </script>
+
     <script>
         const desaLabels = @json($data['byDesa']->pluck('desa'));
         const desaValues = @json($data['byDesa']->pluck('total'));

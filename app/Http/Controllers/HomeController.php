@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
 
 class HomeController extends Controller
 {
@@ -45,17 +46,29 @@ class HomeController extends Controller
         $data['progresku'] = DB::table('data_diris')->where('user_id', $user)->count();
         $data['progressPercentage'] = ($data['progresku'] / $data['totalData']) * 100;
 
-        $userName = Auth::user()->name;
+        $filePath = public_path('wilayah.json');
+        $wilayahData = json_decode(File::get($filePath), true);
+        $kecamatanList = collect($wilayahData)->pluck('KECAMATAN')->unique()->sort()->values();
 
-        $data['byKecamatan'] = DB::table('data_diris')
+        $dbData = DB::table('data_diris')
             ->join('users', 'data_diris.user_id', '=', 'users.id')
             ->select('kecamatan', DB::raw('count(*) as total'))
             ->when($userName !== 'Super Admin', function ($query) use ($userName) {
                 return $query->where('data_diris.kecamatan', '=', $userName);
             })
             ->groupBy('kecamatan')
-            ->get();
+            ->pluck('total', 'kecamatan');
 
+        // Gabungkan data JSON dan hasil query
+        $chartData = $kecamatanList->map(function ($kecamatan) use ($dbData) {
+            return [
+                'kecamatan' => $kecamatan,
+                'total' => $dbData[$kecamatan] ?? 0 // Jika tidak ada data, total = 0
+            ];
+        });
+
+        // Kirim data ke view
+        $data['byKecamatan'] = $chartData;
 
         $data['byDesa'] = DB::table('data_diris')
             ->select('desa', DB::raw('count(*) as total'))
