@@ -199,87 +199,54 @@
             $('#tambahData').submit(function(event) {
                 event.preventDefault();
 
-                let kecamatan = $('#kecamatan').find('option:selected').text();
-                let desa = $('#desa').find('option:selected').text();
-                let nik = $('#nik').val();
-                let namaLengkap = $('#nama_lengkap').val();
-                let fotoKtp = document.getElementById('foto_ktp').files[0];
-                let fotoDiri = document.getElementById('foto_diri').files[0];
-
-                // console.log("Kecamatan:", kecamatan);
-                // console.log("Desa:", desa);
-                // console.log("Nama Lengkap:", namaLengkap);
-                // console.log("Foto KTP:", fotoKtp ? fotoKtp.name : "Tidak ada file");
-                // console.log("Foto Diri:", fotoDiri ? fotoDiri.name : "Tidak ada file");
-
-                let formData = new FormData(this);
-                formData.append('kecamatan', kecamatan);
-                formData.append('desa', desa);
-                formData.append('nik', nik);
-                formData.append('nama_lengkap', namaLengkap);
-                formData.append('foto_ktp', fotoKtp);
-                formData.append('foto_diri', fotoDiri);
-
                 let submitButton = $("button[id='simpan']");
-                submitButton.prop('disabled', true);
-
                 let spinnerHtml =
                     '<div class="spinner-border text-light spinner-border-sm" role="status"><span class="visually-hidden">Loading...</span></div>';
                 let originalButtonHtml = submitButton.html();
-                submitButton.html(spinnerHtml);
+                submitButton.prop('disabled', true).html(spinnerHtml);
+
+                let formData = new FormData(this);
 
                 $.ajax({
-                    url: '{{ route('formulir.store') }}', // URL tujuan
+                    url: '{{ route('formulir.store') }}',
                     type: 'POST',
                     data: formData,
-                    processData: false, // Jangan proses data
-                    contentType: false, // Jangan set content-type secara manual
+                    processData: false,
+                    contentType: false,
                     success: function(data) {
-                        console.log("Data berhasil dikirim:", data);
-                        submitButton.prop('disabled', false);
-                        submitButton.html('Submit');
+                        submitButton.prop('disabled', false).html(originalButtonHtml);
 
-                        if (data['success'] === true) {
+                        if (data.success) {
                             window.location.reload();
-                            $('.invalid-feedback').removeClass('invalid-feedback').html('');
-                            $("input[type='text'], select, input[type='number'], input[type='file'], textarea")
-                                .removeClass('is-invalid');
-                            // alert("Data berhasil disimpan!"); // Alert jika berhasil
                         } else {
-                            $('.invalid-feedback').removeClass('invalid-feedback').html('');
-                            $("input[type='text'], select, input[type='number'], input[type='file'], textarea")
-                                .removeClass('is-invalid');
-
-                            Swal.mixin({
-                                toast: true,
-                                position: 'top-end',
-                                showConfirmButton: false,
-                                timer: 3000,
-                                timerProgressBar: true,
-                                didOpen: (toast) => {
-                                    toast.addEventListener('mouseenter', Swal.stopTimer)
-                                    toast.addEventListener('mouseleave', Swal.resumeTimer)
-                                }
-                            }).fire({
-                                icon: 'error',
-                                text: data.message,
-                            });
-
-                            // Tampilkan alert error
-                            let errorMessages = Object.values(data.errors).flat().join("\n");
-                            alert("Terjadi kesalahan input:\n" + errorMessages);
+                            showValidationErrors(data.errors);
                         }
                     },
-                    error: function(xhr, status, error) {
-                        console.log('Terjadi kesalahan', error);
-                        submitButton.prop('disabled', false);
-                        submitButton.html(originalButtonHtml);
-
-                        // Tampilkan pesan error generik
-                        alert("Terjadi kesalahan pada sistem. Silakan coba lagi nanti.");
+                    error: function(xhr) {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Kesalahan',
+                            text: xhr.responseJSON.message ||
+                                'Terjadi kesalahan pada sistem.',
+                        });
                     }
-
                 });
+
+                function showValidationErrors(errors) {
+                    // Reset semua error sebelumnya
+                    $('.invalid-feedback').remove();
+                    $("input, select, textarea").removeClass('is-invalid');
+
+                    // Tampilkan error pada input yang sesuai
+                    $.each(errors, function(field, messages) {
+                        let input = $(`[name='${field}']`);
+                        if (input.length > 0) {
+                            input.addClass('is-invalid');
+                            input.after(
+                                `<div class="invalid-feedback">${messages.join('<br>')}</div>`);
+                        }
+                    });
+                }
             });
 
         });

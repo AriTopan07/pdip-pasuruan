@@ -57,26 +57,20 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="card">
-                            <div class="card-header">
-                                <h5>Jumlah data per Kecamatan</h5>
-                            </div>
-                            <div class="card-body">
-                                <canvas id="kecamatanChart"></canvas>
-                            </div>
-                        </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Jumlah data per Kecamatan</h5>
                     </div>
-                    <div class="col-md-6">
-                        <div class="card">
-                            <div class="card-header">
-                                <h5>Jumlah data per Desa</h5>
-                            </div>
-                            <div class="card-body">
-                                <canvas id="desaChart"></canvas>
-                            </div>
-                        </div>
+                    <div class="card-body">
+                        <canvas id="kecamatanChart"></canvas>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Jumlah data per Desa</h5>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="desaChart"></canvas>
                     </div>
                 </div>
                 <div class="card">

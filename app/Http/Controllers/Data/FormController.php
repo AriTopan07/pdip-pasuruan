@@ -68,7 +68,6 @@ class FormController extends Controller
             'kecamatan' => 'required',
             'desa' => 'required',
             'nama_lengkap' => 'required',
-            'foto_ktp' => 'required',
             'foto_diri' => 'required',
         ], $pesan);
 
@@ -82,14 +81,17 @@ class FormController extends Controller
         try {
             $auth = Auth::user()->id;
             $uploadedFiles = [];
+
             foreach (['foto_ktp', 'foto_diri'] as $fileField) {
                 if ($request->hasFile($fileField)) {
                     // Ambil nama lengkap dari request dan buat slug untuk nama file
                     $namaLengkap = Str::slug($request->nama_lengkap); // Mengubah nama menjadi format yang aman untuk URL/filename
 
-                    // Simpan file ke disk 'biznet' dengan nama file yang dihasilkan
+                    // Ambil file dari request
                     $file = $request->file($fileField);
                     $fileName = $namaLengkap . '_' . time() . '.' . $file->getClientOriginalExtension(); // Gabungkan nama lengkap dengan timestamp untuk membuat nama file unik
+
+                    // Simpan file ke disk 'biznet'
                     $result = Storage::disk('biznet')->putFileAs(
                         '/',
                         $file,
@@ -97,19 +99,18 @@ class FormController extends Controller
                         'public'
                     );
 
+                    if (!$result) {
+                        // Lempar exception jika penyimpanan gagal
+                        throw new \Exception("Gagal mengunggah file {$fileField} ke storage.");
+                    }
+
                     // Ambil URL file yang telah diunggah
-                    $path = Storage::disk('biznet')->url($result); // Pastikan untuk mendapatkan URL file yang benar
+                    $path = Storage::disk('biznet')->url($fileName);
 
                     // Simpan path dari file yang berhasil diunggah
                     $uploadedFiles[$fileField] = $path;
                 }
             }
-
-            // foreach (['foto_ktp', 'foto_diri'] as $fileField) {
-            //     if ($request->hasFile($fileField)) {
-            //         $uploadedFiles[$fileField] = $request->file($fileField)->store('files/data_diri', 'public');
-            //     }
-            // }
 
             $data = DataDiri::create([
                 'kecamatan' => $request->kecamatan,
@@ -126,6 +127,13 @@ class FormController extends Controller
             return response()->json([
                 'success' => true,
                 'data' => $data
+            ]);
+        } catch (\Exception $e) {
+            session()->flash('error', $e->getMessage());
+
+            return response()->json([
+                'success' => false,
+                'message' => $e->getMessage()
             ]);
         } catch (\Throwable $th) {
             session()->flash('error', 'Terjadi kesalahan saat menambahkan data: ' . $th->getMessage());

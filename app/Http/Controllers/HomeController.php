@@ -34,11 +34,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        // $data = [
-        //     'GEBRO'
-        // ];
-
         $user = Auth::user()->id;
+        $userName = Auth::user()->name;
         $data['totalData'] = 100;
 
         $data['dataMasuk'] = DataDiri::count();
@@ -47,24 +44,43 @@ class HomeController extends Controller
         $data['total'] = DataDiri::count();
         $data['progresku'] = DB::table('data_diris')->where('user_id', $user)->count();
         $data['progressPercentage'] = ($data['progresku'] / $data['totalData']) * 100;
+
+        $userName = Auth::user()->name;
+
         $data['byKecamatan'] = DB::table('data_diris')
+            ->join('users', 'data_diris.user_id', '=', 'users.id')
             ->select('kecamatan', DB::raw('count(*) as total'))
+            ->when($userName !== 'Super Admin', function ($query) use ($userName) {
+                return $query->where('data_diris.kecamatan', '=', $userName);
+            })
             ->groupBy('kecamatan')
             ->get();
 
+
         $data['byDesa'] = DB::table('data_diris')
             ->select('desa', DB::raw('count(*) as total'))
+            ->when($userName !== 'Super Admin', function ($query) use ($userName) {
+                return $query->where('data_diris.kecamatan', '=', $userName);
+            })
             ->groupBy('desa')
             ->get();
 
+
         $data['byTps'] = DB::table('data_diris')
             ->join('users', 'data_diris.user_id', '=', 'users.id')
-            ->select('data_diris.kecamatan', 'data_diris.desa', 'data_diris.user_id', 'users.name as user_name', DB::raw('count(data_diris.id) as total'))
+            ->select(
+                'data_diris.kecamatan',
+                'data_diris.desa',
+                'data_diris.user_id',
+                'users.name as user_name',
+                DB::raw('count(data_diris.id) as total')
+            )
+            ->when($userName !== 'Super Admin', function ($query) use ($userName) {
+                return $query->where('data_diris.kecamatan', '=', $userName);
+            })
             ->groupBy('data_diris.kecamatan', 'data_diris.desa', 'data_diris.user_id', 'users.name')
             ->get();
 
-
-        // dd($data);
         return view('home', compact('data'));
     }
 }
