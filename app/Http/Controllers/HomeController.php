@@ -82,8 +82,6 @@ class HomeController extends Controller
         $data['byTps'] = DB::table('data_diris')
             ->join('users', 'data_diris.user_id', '=', 'users.id')
             ->select(
-                'data_diris.kecamatan',
-                'data_diris.desa',
                 'data_diris.user_id',
                 'users.name as user_name',
                 DB::raw('count(data_diris.id) as total')
@@ -91,8 +89,9 @@ class HomeController extends Controller
             ->when($userName !== 'Super Admin', function ($query) use ($userName) {
                 return $query->where('data_diris.kecamatan', '=', $userName);
             })
-            ->groupBy('data_diris.kecamatan', 'data_diris.desa', 'data_diris.user_id', 'users.name')
+            ->groupBy('data_diris.user_id', 'users.name')
             ->get();
+
 
         return view('home', compact('data'));
     }
