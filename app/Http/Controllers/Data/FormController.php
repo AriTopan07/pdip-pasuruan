@@ -72,13 +72,7 @@ class FormController extends Controller
     {
         Session::put('menu_active', '/form-tambah-data');
 
-        $user = Auth::user();
-        $location = extractKecamatanKelurahan($user->username);
-
-        return view('data.form.view', [
-            'kecamatan_user' => $location['kecamatan'],
-            'kelurahan_user' => $location['kelurahan'],
-        ]);
+        return view('data.form.view');
     }
 
     public function store(Request $request)
@@ -87,9 +81,10 @@ class FormController extends Controller
             'required' => ':attribute wajib diisi!',
         ];
 
+        $user = Auth::user();
+        $location = extractKecamatanKelurahan($user->username);
+
         $validator = Validator::make($request->all(), [
-            'kecamatan' => 'required',
-            'desa' => 'required',
             'nama_lengkap' => 'required',
             'foto_diri' => 'required|image',
         ], $pesan);
@@ -136,8 +131,8 @@ class FormController extends Controller
             }
 
             $data = DataDiri::create([
-                'kecamatan' => $request->kecamatan,
-                'desa' => $request->desa,
+                'kecamatan' => $location['kecamatan'],
+                'desa' => $location['kelurahan'],
                 'nik' => $request->nik,
                 'nama_lengkap' => $request->nama_lengkap,
                 'foto_ktp' => $uploadedFiles['foto_ktp'] ?? null,

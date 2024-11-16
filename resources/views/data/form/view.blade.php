@@ -14,20 +14,6 @@
                     <form action="" id="tambahData" method="" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
-                            <label class="fw-bold">Kecamatan<span class="text-danger">*wajib diisi</span></label>
-                            <div class="form-group">
-                                <select name="kecamatan" id="kecamatan" class="form-control" @readonly(true)>
-                                    <option selected value="{{ $kecamatan_user }}">{{ $kecamatan_user }}</option>
-                                </select>
-                                <p class="invalid-feedback"></p>
-                            </div>
-                            <label class="fw-bold">Kelurahan/Desa<span class="text-danger">*wajib diisi</span></label>
-                            <div class="form-group">
-                                <select name="desa" id="desa" class="form-control" @readonly(true)>
-                                    <option selected value="{{ $kelurahan_user }}">{{ $kelurahan_user }}</option>
-                                </select>
-                                <p class="invalid-feedback"></p>
-                            </div>
                             <label class="fw-bold">Nama Lengkap Pemilih<span class="text-danger">*wajib diisi</span></label>
                             <div class="form-group">
                                 <input type="text" class="form-control" name="nama_lengkap" id="nama_lengkap"
