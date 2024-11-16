@@ -62,10 +62,10 @@
 
 @push('js')
     <script>
-        document.getElementById('foto_ktp').addEventListener('change', function() {
-            var fileName = this.files[0] ? this.files[0].name : '';
-            document.getElementById('file-name-ktp').textContent = fileName;
-        });
+        // document.getElementById('foto_ktp').addEventListener('change', function() {
+        //     var fileName = this.files[0] ? this.files[0].name : '';
+        //     document.getElementById('file-name-ktp').textContent = fileName;
+        // });
         document.getElementById('foto_diri').addEventListener('change', function() {
             var fileName = this.files[0] ? this.files[0].name : '';
             document.getElementById('file-name-diri').textContent = fileName;
@@ -128,7 +128,7 @@
         }
 
         // Set max size to 800KB (800 * 1024 bytes)
-        handleFileChange('foto_ktp', 'file-name-ktp', 800);
+        // handleFileChange('foto_ktp', 'file-name-ktp', 800);
         handleFileChange('foto_diri', 'file-name-diri', 800);
     </script>
     <script>
