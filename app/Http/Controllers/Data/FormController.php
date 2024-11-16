@@ -71,7 +71,14 @@ class FormController extends Controller
     public function view()
     {
         Session::put('menu_active', '/form-tambah-data');
-        return view('data.form.view');
+
+        $user = Auth::user();
+        $location = extractKecamatanKelurahan($user->username);
+
+        return view('data.form.view', [
+            'kecamatan_user' => $location['kecamatan'],
+            'kelurahan_user' => $location['kelurahan'],
+        ]);
     }
 
     public function store(Request $request)

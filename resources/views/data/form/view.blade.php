@@ -16,14 +16,15 @@
                         <div class="row">
                             <label class="fw-bold">Kecamatan<span class="text-danger">*wajib diisi</span></label>
                             <div class="form-group">
-                                <select name="kecamatan" id="kecamatan" class="form-control">
-                                    <option selected disabled>Pilih Kecamatan</option>
+                                <select name="kecamatan" id="kecamatan" class="form-control" @readonly(true)>
+                                    <option selected value="{{ $kecamatan_user }}">{{ $kecamatan_user }}</option>
                                 </select>
                                 <p class="invalid-feedback"></p>
                             </div>
                             <label class="fw-bold">Kelurahan/Desa<span class="text-danger">*wajib diisi</span></label>
                             <div class="form-group">
-                                <select name="desa" id="desa" class="form-control">
+                                <select name="desa" id="desa" class="form-control" @readonly(true)>
+                                    <option selected value="{{ $kelurahan_user }}">{{ $kelurahan_user }}</option>
                                 </select>
                                 <p class="invalid-feedback"></p>
                             </div>
@@ -147,54 +148,54 @@
     <script>
         $(document).ready(function() {
 
-            $.ajax({
-                url: "/kecamatan",
-                method: "GET",
-                success: function(data) {
-                    // Tambahkan opsi kecamatan ke dalam dropdown
-                    data.forEach(function(kecamatan) {
-                        $('#kecamatan').append(
-                            `<option value="${kecamatan}">${kecamatan}</option>`
-                        );
-                    });
-                },
-                error: function(xhr, status, error) {
-                    console.error("Gagal mengambil data kecamatan:", error);
-                    $('#loading-kecamatan').text("Gagal memuat data kecamatan");
-                }
-            });
+            // $.ajax({
+            //     url: "/kecamatan",
+            //     method: "GET",
+            //     success: function(data) {
+            //         // Tambahkan opsi kecamatan ke dalam dropdown
+            //         data.forEach(function(kecamatan) {
+            //             $('#kecamatan').append(
+            //                 `<option value="${kecamatan}">${kecamatan}</option>`
+            //             );
+            //         });
+            //     },
+            //     error: function(xhr, status, error) {
+            //         console.error("Gagal mengambil data kecamatan:", error);
+            //         $('#loading-kecamatan').text("Gagal memuat data kecamatan");
+            //     }
+            // });
 
-            // Event change pada dropdown kecamatan untuk mengambil data desa
-            $('#kecamatan').on('change', function() {
-                var kecamatanId = $(this).val();
+            // // Event change pada dropdown kecamatan untuk mengambil data desa
+            // $('#kecamatan').on('change', function() {
+            //     var kecamatanId = $(this).val();
 
-                if (kecamatanId) {
-                    $('#desa').empty().append(
-                        '<option selected disabled>Pilih Desa</option>'); // Reset desa
+            //     if (kecamatanId) {
+            //         $('#desa').empty().append(
+            //             '<option selected disabled>Pilih Desa</option>'); // Reset desa
 
-                    $.ajax({
-                        url: `/desa/${kecamatanId}`,
-                        method: "GET",
-                        success: function(data) {
-                            // Sembunyikan spinner desa setelah data berhasil diambil
-                            $('#loading-desa').hide();
+            //         $.ajax({
+            //             url: `/desa/${kecamatanId}`,
+            //             method: "GET",
+            //             success: function(data) {
+            //                 // Sembunyikan spinner desa setelah data berhasil diambil
+            //                 $('#loading-desa').hide();
 
-                            data.forEach(function(desa) {
-                                $('#desa').append(
-                                    `<option value="${desa.KELURAHAN}">${desa.KELURAHAN}</option>`
-                                );
-                            });
-                        },
-                        error: function(xhr, status, error) {
-                            console.error("Gagal mengambil data desa:", error);
-                            $('#loading-desa').text("Gagal memuat data desa");
-                        }
-                    });
-                } else {
-                    $('#desa').empty().append(
-                        '<option value="">Pilih Desa</option>');
-                }
-            });
+            //                 data.forEach(function(desa) {
+            //                     $('#desa').append(
+            //                         `<option value="${desa.KELURAHAN}">${desa.KELURAHAN}</option>`
+            //                     );
+            //                 });
+            //             },
+            //             error: function(xhr, status, error) {
+            //                 console.error("Gagal mengambil data desa:", error);
+            //                 $('#loading-desa').text("Gagal memuat data desa");
+            //             }
+            //         });
+            //     } else {
+            //         $('#desa').empty().append(
+            //             '<option value="">Pilih Desa</option>');
+            //     }
+            // });
 
             $('#tambahData').submit(function(event) {
                 event.preventDefault();

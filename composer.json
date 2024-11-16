@@ -37,7 +37,8 @@
             "Database\\Seeders\\": "database/seeders/"
         },
         "files": [
-            "app/Helpers/NavHelper.php"
+            "app/Helpers/NavHelper.php",
+            "app/Helpers/WilayahHelper.php"
         ]
     },
     "autoload-dev": {
