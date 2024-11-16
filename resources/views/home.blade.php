@@ -73,13 +73,75 @@
                         <canvas id="desaChart"></canvas>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="card-header">
-                        <h5>Jumlah data per TPS</h5>
-                    </div>
-                    <div class="card-body">
-                        <canvas id="tpsChart" height="1000"></canvas>
-                    </div>
+                <div class="row" style="max-height: 120vh; overflow-y: auto;">
+                    @foreach ($tpsData as $desa => $dataPerDesa)
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5>Jumlah Data Desa: {{ $desa }}</h5>
+                                </div>
+                                <div class="card-body">
+                                    <canvas id="chart-{{ Str::slug($desa) }}" height="300"></canvas>
+                                </div>
+                            </div>
+                        </div>
+
+                        <script>
+                            document.addEventListener('DOMContentLoaded', function() {
+                                const ctx = document.getElementById('chart-{{ Str::slug($desa) }}').getContext('2d');
+                                const tpsData = @json($dataPerDesa);
+
+                                const labels = tpsData.map(data => data.user_name); // Menggunakan user_name
+                                const dataCounts = tpsData.map(data => data.total);
+                                const bgColors = kecamatanLabels.map(() => {
+                                    return `rgba(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, 0.8)`;
+                                });
+
+                                new Chart(ctx, {
+                                    type: 'bar',
+                                    data: {
+                                        labels: labels,
+                                        datasets: [{
+                                            label: 'Jumlah Data per TPS',
+                                            data: dataCounts,
+                                            backgroundColor: bgColors,
+                                            borderWidth: 1
+                                        }]
+                                    },
+                                    options: {
+                                        responsive: true,
+                                        plugins: {
+                                            legend: {
+                                                display: false // Sembunyikan legenda jika tidak diperlukan
+                                            },
+                                            tooltip: {
+                                                callbacks: {
+                                                    label: function(tooltipItem) {
+                                                        return `Jumlah: ${tooltipItem.raw}`;
+                                                    }
+                                                }
+                                            },
+                                            datalabels: { // Konfigurasi untuk menampilkan jumlah data
+                                                anchor: 'end',
+                                                align: 'top',
+                                                formatter: (value) => value, // Menampilkan nilai data
+                                                font: {
+                                                    size: 12
+                                                },
+                                                color: '#000' // Warna label
+                                            }
+                                        },
+                                        scales: {
+                                            y: {
+                                                beginAtZero: true
+                                            }
+                                        }
+                                    },
+                                    plugins: [ChartDataLabels]
+                                });
+                            });
+                        </script>
+                    @endforeach
                 </div>
             @elseif (Auth::user()->groups()->where('group_id', 2)->exists())
                 <div class="card">
@@ -90,22 +152,146 @@
                         <canvas id="desaChart"></canvas>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="card-header">
-                        <h5>Jumlah data per TPS</h5>
-                    </div>
-                    <div class="card-body">
-                        <canvas id="tpsChart" height="1000"></canvas>
-                    </div>
+                <div class="row" style="max-height: 120vh; overflow-y: auto;">
+                    @foreach ($tpsData as $desa => $dataPerDesa)
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5>Jumlah Data Desa: {{ $desa }}</h5>
+                                </div>
+                                <div class="card-body">
+                                    <canvas id="chart-{{ Str::slug($desa) }}" height="300"></canvas>
+                                </div>
+                            </div>
+                        </div>
+
+                        <script>
+                            document.addEventListener('DOMContentLoaded', function() {
+                                const ctx = document.getElementById('chart-{{ Str::slug($desa) }}').getContext('2d');
+                                const tpsData = @json($dataPerDesa);
+
+                                const labels = tpsData.map(data => data.user_name); // Menggunakan user_name
+                                const dataCounts = tpsData.map(data => data.total);
+                                const bgColors = kecamatanLabels.map(() => {
+                                    return `rgba(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, 0.8)`;
+                                });
+
+                                new Chart(ctx, {
+                                    type: 'bar',
+                                    data: {
+                                        labels: labels,
+                                        datasets: [{
+                                            label: 'Jumlah Data per TPS',
+                                            data: dataCounts,
+                                            backgroundColor: bgColors,
+                                            borderWidth: 1
+                                        }]
+                                    },
+                                    options: {
+                                        responsive: true,
+                                        plugins: {
+                                            legend: {
+                                                display: false // Sembunyikan legenda jika tidak diperlukan
+                                            },
+                                            tooltip: {
+                                                callbacks: {
+                                                    label: function(tooltipItem) {
+                                                        return `Jumlah: ${tooltipItem.raw}`;
+                                                    }
+                                                }
+                                            },
+                                            datalabels: { // Konfigurasi untuk menampilkan jumlah data
+                                                anchor: 'end',
+                                                align: 'top',
+                                                formatter: (value) => value, // Menampilkan nilai data
+                                                font: {
+                                                    size: 12
+                                                },
+                                                color: '#000' // Warna label
+                                            }
+                                        },
+                                        scales: {
+                                            y: {
+                                                beginAtZero: true
+                                            }
+                                        }
+                                    },
+                                    plugins: [ChartDataLabels]
+                                });
+                            });
+                        </script>
+                    @endforeach
                 </div>
             @elseif (Auth::user()->groups()->where('group_id', 3)->exists())
-                <div class="card">
-                    <div class="card-header">
-                        <h5>Jumlah data per TPS</h5>
-                    </div>
-                    <div class="card-body">
-                        <canvas id="tpsChart" height="600"></canvas>
-                    </div>
+                <div class="row">
+                    @foreach ($tpsData as $desa => $dataPerDesa)
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5>Jumlah Data Desa: {{ $desa }}</h5>
+                                </div>
+                                <div class="card-body">
+                                    <canvas id="chart-{{ Str::slug($desa) }}" height="120"></canvas>
+                                </div>
+                            </div>
+                        </div>
+
+                        <script>
+                            document.addEventListener('DOMContentLoaded', function() {
+                                const ctx = document.getElementById('chart-{{ Str::slug($desa) }}').getContext('2d');
+                                const tpsData = @json($dataPerDesa);
+
+                                const labels = tpsData.map(data => data.user_name); // Menggunakan user_name
+                                const dataCounts = tpsData.map(data => data.total);
+                                const bgColors = kecamatanLabels.map(() => {
+                                    return `rgba(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, 0.8)`;
+                                });
+
+                                new Chart(ctx, {
+                                    type: 'bar',
+                                    data: {
+                                        labels: labels,
+                                        datasets: [{
+                                            label: 'Jumlah Data per TPS',
+                                            data: dataCounts,
+                                            backgroundColor: bgColors,
+                                            borderWidth: 1
+                                        }]
+                                    },
+                                    options: {
+                                        responsive: true,
+                                        plugins: {
+                                            legend: {
+                                                display: false // Sembunyikan legenda jika tidak diperlukan
+                                            },
+                                            tooltip: {
+                                                callbacks: {
+                                                    label: function(tooltipItem) {
+                                                        return `Jumlah: ${tooltipItem.raw}`;
+                                                    }
+                                                }
+                                            },
+                                            datalabels: { // Konfigurasi untuk menampilkan jumlah data
+                                                anchor: 'end',
+                                                align: 'top',
+                                                formatter: (value) => value, // Menampilkan nilai data
+                                                font: {
+                                                    size: 12
+                                                },
+                                                color: '#000' // Warna label
+                                            }
+                                        },
+                                        scales: {
+                                            y: {
+                                                beginAtZero: true
+                                            }
+                                        }
+                                    },
+                                    plugins: [ChartDataLabels]
+                                });
+                            });
+                        </script>
+                    @endforeach
                 </div>
             @elseif (Auth::user()->groups()->where('group_id', 4)->exists())
                 <div class="card">
@@ -145,7 +331,7 @@
 
         // Buat warna background secara dinamis
         const kecamatanBackgroundColors = kecamatanLabels.map(() => {
-            return `rgba(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, 0.5)`;
+            return `rgba(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, 0.7)`;
         });
 
         // Inisialisasi Chart.js
@@ -247,68 +433,6 @@
                 }
             },
             plugins: [ChartDataLabels] // Aktifkan plugin datalabels
-        });
-    </script>
-
-    <script>
-        const tpsData = @json($data['byTps']);
-        const tpsLabels = tpsData.map(item => `${item.user_name}`);
-        const tpsValues = tpsData.map(item => item.total);
-
-        const tpsBackgroundColors = tpsLabels.map(() => {
-            return `rgba(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, 0.5)`;
-        });
-
-        const ctxTps = document.getElementById('tpsChart').getContext('2d');
-        new Chart(ctxTps, {
-            type: 'bar', // Tetap menggunakan "bar"
-            data: {
-                labels: tpsLabels,
-                datasets: [{
-                    label: 'Jumlah Data per TPS',
-                    data: tpsValues,
-                    backgroundColor: tpsBackgroundColors,
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                indexAxis: 'y', // Mengatur sumbu menjadi horizontal
-                responsive: true,
-                plugins: {
-                    tooltip: {
-                        callbacks: {
-                            title: (tooltipItems) => {
-                                const index = tooltipItems[0].dataIndex;
-                                return tpsLabels[index];
-                            },
-                            label: (tooltipItem) => {
-                                return `Jumlah: ${tooltipItem.raw}`;
-                            }
-                        }
-                    },
-                    legend: {
-                        display: false // Sembunyikan legenda jika tidak diperlukan
-                    },
-                    datalabels: { // Plugin untuk menampilkan jumlah data di bar
-                        anchor: 'end',
-                        align: 'right',
-                        formatter: (value) => value, // Tampilkan nilai data
-                        color: '#000', // Warna teks
-                        font: {
-                            size: 12, // Ukuran font
-                        }
-                    }
-                },
-                scales: {
-                    x: { // Sumbu x untuk nilai
-                        beginAtZero: true
-                    },
-                    y: { // Sumbu y untuk label
-                        beginAtZero: false
-                    }
-                }
-            },
-            plugins: [ChartDataLabels] // Daftarkan plugin Data Labels
         });
     </script>
 @endpush

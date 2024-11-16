@@ -35,22 +35,25 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $user = Auth::user()->id;
-        $userName = Auth::user()->name;
-        $data['totalData'] = 100;
-
+        $user = Auth::user();
+        $userName = $user->name;
+        $userGroup = DB::table('user_groups')
+            ->where('user_id', $user->id)
+            ->value('group_id');
+        $capai = 100;
         $data['dataMasuk'] = DataDiri::count();
         $data['kecamatan'] = 24;
         $data['desa'] = 365;
-        $data['total'] = DataDiri::count();
-        $data['progresku'] = DB::table('data_diris')->where('user_id', $user)->count();
-        $data['progressPercentage'] = ($data['progresku'] / $data['totalData']) * 100;
+        $data['progresku'] = DB::table('data_diris')->where('user_id', $user->id)->count();
+        $data['progressPercentage'] = ($data['progresku'] / $capai) * 100;
 
         $data['byKecamatan'] = $this->getByKecamatan($userName);
         $data['byDesa'] = $this->getByDesa($userName);
-        $data['byTps'] = $this->getByTps($userName);
+        $tpsData = $this->getByTps2($user, $userGroup, $userName);
 
-        return view('home', compact('data'));
+        // dd($tpsData);
+
+        return view('home', compact('data', 'tpsData'));
     }
 
     public function getByKecamatan($userName)
@@ -72,7 +75,7 @@ class HomeController extends Controller
         $chartData = $kecamatanList->map(function ($kecamatan) use ($dbData) {
             return [
                 'kecamatan' => $kecamatan,
-                'total' => $dbData[$kecamatan] ?? 0 // Jika tidak ada data, total = 0
+                'total' => $dbData[$kecamatan] ?? 0
             ];
         });
 
@@ -92,40 +95,29 @@ class HomeController extends Controller
         return $data;
     }
 
-    public function getByTps($userName)
+    public function getByTps2($user, $userGroup, $userName)
     {
         $data = DB::table('data_diris')
             ->join('users', 'data_diris.user_id', '=', 'users.id')
             ->select(
-                'data_diris.user_id',
+                'data_diris.kecamatan',
+                'data_diris.desa',
                 'users.name as user_name',
-                DB::raw('count(data_diris.id) as total')
+                DB::raw('COUNT(data_diris.id) as total')
             )
-            ->when($userName !== 'Super Admin', function ($query) use ($userName) {
-                return $query->where('data_diris.kecamatan', '=', $userName);
+            ->when($user->name !== 'Super Admin', function ($query) use ($userName, $userGroup) {
+                if ($userGroup == 3) {
+                    return $query->where('data_diris.desa', $userName);
+                }
+                if ($userGroup == 2) {
+                    return $query->where('data_diris.kecamatan', $userName);
+                }
+                return $query;
             })
-            ->groupBy('data_diris.user_id', 'users.name')
-            ->orderBy('users.id', 'asc')
-            ->get();
-
-        return $data;
-    }
-
-    public function getByTps2($userName)
-    {
-        $data = DB::table('data_diris')
-            ->join('users', 'data_diris.user_id', '=', 'users.id')
-            ->select(
-                'data_diris.user_id',
-                'users.name as user_name',
-                DB::raw('count(data_diris.id) as total')
-            )
-            ->when($userName !== 'Super Admin', function ($query) use ($userName) {
-                return $query->where('data_diris.kecamatan', '=', $userName);
-            })
-            ->groupBy('data_diris.user_id', 'users.name')
-            ->orderBy('users.id', 'asc')
-            ->get();
+            ->groupBy('data_diris.kecamatan', 'data_diris.desa', 'users.name')
+            ->orderBy('users.name', 'asc')
+            ->get()
+            ->groupBy('desa');
 
         return $data;
     }
