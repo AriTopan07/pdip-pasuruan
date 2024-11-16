@@ -46,6 +46,15 @@ class HomeController extends Controller
         $data['progresku'] = DB::table('data_diris')->where('user_id', $user)->count();
         $data['progressPercentage'] = ($data['progresku'] / $data['totalData']) * 100;
 
+        $data['byKecamatan'] = $this->getByKecamatan($userName);
+        $data['byDesa'] = $this->getByDesa($userName);
+        $data['byTps'] = $this->getByTps($userName);
+
+        return view('home', compact('data'));
+    }
+
+    public function getByKecamatan($userName)
+    {
         $filePath = public_path('wilayah.json');
         $wilayahData = json_decode(File::get($filePath), true);
         $kecamatanList = collect($wilayahData)->pluck('KECAMATAN')->unique()->sort()->values();
@@ -67,10 +76,12 @@ class HomeController extends Controller
             ];
         });
 
-        // Kirim data ke view
-        $data['byKecamatan'] = $chartData;
+        return $chartData;
+    }
 
-        $data['byDesa'] = DB::table('data_diris')
+    public function getByDesa($userName)
+    {
+        $data = DB::table('data_diris')
             ->select('desa', DB::raw('count(*) as total'))
             ->when($userName !== 'Super Admin', function ($query) use ($userName) {
                 return $query->where('data_diris.kecamatan', '=', $userName);
@@ -78,8 +89,12 @@ class HomeController extends Controller
             ->groupBy('desa')
             ->get();
 
+        return $data;
+    }
 
-        $data['byTps'] = DB::table('data_diris')
+    public function getByTps($userName)
+    {
+        $data = DB::table('data_diris')
             ->join('users', 'data_diris.user_id', '=', 'users.id')
             ->select(
                 'data_diris.user_id',
@@ -93,7 +108,6 @@ class HomeController extends Controller
             ->orderBy('users.id', 'asc')
             ->get();
 
-
-        return view('home', compact('data'));
+        return $data;
     }
 }
