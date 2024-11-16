@@ -90,6 +90,7 @@ class HomeController extends Controller
                 return $query->where('data_diris.kecamatan', '=', $userName);
             })
             ->groupBy('data_diris.user_id', 'users.name')
+            ->orderBy('users.id', 'asc')
             ->get();
 
 
