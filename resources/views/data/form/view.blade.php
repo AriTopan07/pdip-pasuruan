@@ -20,7 +20,7 @@
                                     autocomplete="off">
                                 <p class="invalid-feedback"></p>
                             </div>
-                            <label class="fw-bold">NIK Pemilih (tidak wajib)</label>
+                            {{-- <label class="fw-bold">NIK Pemilih (tidak wajib)</label>
                             <div class="form-group">
                                 <input type="text" class="form-control" name="nik" id="nik" autocomplete="off">
                                 <p class="invalid-feedback"></p>
@@ -36,7 +36,7 @@
                                 <span id="file-name-ktp"
                                     style="margin-left: 10px; font-weight: bold; font-size: 14px;"></span>
                                 <p class="invalid-feedback"></p>
-                            </div>
+                            </div> --}}
                             <label class="fw-bold">Foto Diri<span class="text-danger">*wajib diisi</span></label>
                             <div class="form-group">
                                 <input type="file" name="foto_diri" id="foto_diri" accept="image/*"
