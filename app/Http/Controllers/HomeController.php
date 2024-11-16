@@ -110,4 +110,23 @@ class HomeController extends Controller
 
         return $data;
     }
+
+    public function getByTps2($userName)
+    {
+        $data = DB::table('data_diris')
+            ->join('users', 'data_diris.user_id', '=', 'users.id')
+            ->select(
+                'data_diris.user_id',
+                'users.name as user_name',
+                DB::raw('count(data_diris.id) as total')
+            )
+            ->when($userName !== 'Super Admin', function ($query) use ($userName) {
+                return $query->where('data_diris.kecamatan', '=', $userName);
+            })
+            ->groupBy('data_diris.user_id', 'users.name')
+            ->orderBy('users.id', 'asc')
+            ->get();
+
+        return $data;
+    }
 }
