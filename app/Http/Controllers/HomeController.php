@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
 
 class HomeController extends Controller
 {
@@ -45,19 +46,42 @@ class HomeController extends Controller
         $data['progresku'] = DB::table('data_diris')->where('user_id', $user)->count();
         $data['progressPercentage'] = ($data['progresku'] / $data['totalData']) * 100;
 
-        $userName = Auth::user()->name;
+        $data['byKecamatan'] = $this->getByKecamatan($userName);
+        $data['byDesa'] = $this->getByDesa($userName);
+        $data['byTps'] = $this->getByTps($userName);
 
-        $data['byKecamatan'] = DB::table('data_diris')
+        return view('home', compact('data'));
+    }
+
+    public function getByKecamatan($userName)
+    {
+        $filePath = public_path('wilayah.json');
+        $wilayahData = json_decode(File::get($filePath), true);
+        $kecamatanList = collect($wilayahData)->pluck('KECAMATAN')->unique()->sort()->values();
+
+        $dbData = DB::table('data_diris')
             ->join('users', 'data_diris.user_id', '=', 'users.id')
             ->select('kecamatan', DB::raw('count(*) as total'))
             ->when($userName !== 'Super Admin', function ($query) use ($userName) {
                 return $query->where('data_diris.kecamatan', '=', $userName);
             })
             ->groupBy('kecamatan')
-            ->get();
+            ->pluck('total', 'kecamatan');
 
+        // Gabungkan data JSON dan hasil query
+        $chartData = $kecamatanList->map(function ($kecamatan) use ($dbData) {
+            return [
+                'kecamatan' => $kecamatan,
+                'total' => $dbData[$kecamatan] ?? 0 // Jika tidak ada data, total = 0
+            ];
+        });
 
-        $data['byDesa'] = DB::table('data_diris')
+        return $chartData;
+    }
+
+    public function getByDesa($userName)
+    {
+        $data = DB::table('data_diris')
             ->select('desa', DB::raw('count(*) as total'))
             ->when($userName !== 'Super Admin', function ($query) use ($userName) {
                 return $query->where('data_diris.kecamatan', '=', $userName);
@@ -65,12 +89,14 @@ class HomeController extends Controller
             ->groupBy('desa')
             ->get();
 
+        return $data;
+    }
 
-        $data['byTps'] = DB::table('data_diris')
+    public function getByTps($userName)
+    {
+        $data = DB::table('data_diris')
             ->join('users', 'data_diris.user_id', '=', 'users.id')
             ->select(
-                'data_diris.kecamatan',
-                'data_diris.desa',
                 'data_diris.user_id',
                 'users.name as user_name',
                 DB::raw('count(data_diris.id) as total')
@@ -78,9 +104,10 @@ class HomeController extends Controller
             ->when($userName !== 'Super Admin', function ($query) use ($userName) {
                 return $query->where('data_diris.kecamatan', '=', $userName);
             })
-            ->groupBy('data_diris.kecamatan', 'data_diris.desa', 'data_diris.user_id', 'users.name')
+            ->groupBy('data_diris.user_id', 'users.name')
+            ->orderBy('users.id', 'asc')
             ->get();
 
-        return view('home', compact('data'));
+        return $data;
     }
 }

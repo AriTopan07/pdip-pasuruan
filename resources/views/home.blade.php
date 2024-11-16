@@ -78,7 +78,7 @@
                         <h5>Jumlah data per TPS</h5>
                     </div>
                     <div class="card-body">
-                        <canvas id="tpsChart" height="800"></canvas>
+                        <canvas id="tpsChart" height="1000"></canvas>
                     </div>
                 </div>
             @elseif (Auth::user()->groups()->where('group_id', 2)->exists())
@@ -95,7 +95,7 @@
                         <h5>Jumlah data per TPS</h5>
                     </div>
                     <div class="card-body">
-                        <canvas id="tpsChart" height="800"></canvas>
+                        <canvas id="tpsChart" height="1000"></canvas>
                     </div>
                 </div>
             @elseif (Auth::user()->groups()->where('group_id', 3)->exists())
@@ -104,7 +104,7 @@
                         <h5>Jumlah data per TPS</h5>
                     </div>
                     <div class="card-body">
-                        <canvas id="tpsChart" height="800"></canvas>
+                        <canvas id="tpsChart" height="600"></canvas>
                     </div>
                 </div>
             @elseif (Auth::user()->groups()->where('group_id', 4)->exists())
@@ -135,11 +135,20 @@
 
 @push('js')
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom"></script>
     <script>
-        const kecamatanLabels = @json($data['byKecamatan']->pluck('kecamatan'));
-        const kecamatanValues = @json($data['byKecamatan']->pluck('total'));
+        // Ambil data dari PHP
+        const kecamatanData = @json($data['byKecamatan']);
+        const kecamatanLabels = kecamatanData.map(item => item.kecamatan);
+        const kecamatanValues = kecamatanData.map(item => item.total);
 
-        // Render chart
+        // Buat warna background secara dinamis
+        const kecamatanBackgroundColors = kecamatanLabels.map(() => {
+            return `rgba(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, 0.5)`;
+        });
+
+        // Inisialisasi Chart.js
         const ctx = document.getElementById('kecamatanChart').getContext('2d');
         new Chart(ctx, {
             type: 'bar',
@@ -148,28 +157,54 @@
                 datasets: [{
                     label: 'Jumlah Data per Kecamatan',
                     data: kecamatanValues,
-                    backgroundColor: 'rgba(255, 0, 0, 0.6)',
+                    backgroundColor: kecamatanBackgroundColors,
                     borderWidth: 1
                 }]
             },
             options: {
                 responsive: true,
+                plugins: {
+                    legend: {
+                        display: true
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(tooltipItem) {
+                                return `${tooltipItem.raw} data`;
+                            }
+                        }
+                    },
+                    datalabels: { // Konfigurasi untuk menampilkan jumlah data
+                        anchor: 'end',
+                        align: 'top',
+                        formatter: (value) => value, // Menampilkan nilai data
+                        font: {
+                            size: 12
+                        },
+                        color: '#000' // Warna label
+                    }
+                },
                 scales: {
                     y: {
                         beginAtZero: true
                     }
                 }
-            }
+            },
+            plugins: [ChartDataLabels] // Aktifkan plugin
         });
     </script>
+
     <script>
+        // Data dari backend
         const desaLabels = @json($data['byDesa']->pluck('desa'));
         const desaValues = @json($data['byDesa']->pluck('total'));
 
+        // Warna background untuk batang
         const desaBackgroundColors = desaLabels.map(() => {
-            return `rgba(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, 0.5)`;
+            return `rgba(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, 0.7)`; // Warna batang dengan transparansi
         });
 
+        // Inisialisasi Chart.js
         const ctxDesa = document.getElementById('desaChart').getContext('2d');
         new Chart(ctxDesa, {
             type: 'bar',
@@ -184,14 +219,37 @@
             },
             options: {
                 responsive: true,
+                plugins: {
+                    legend: {
+                        display: false // Sembunyikan legenda jika tidak diperlukan
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(tooltipItem) {
+                                return `Jumlah: ${tooltipItem.raw}`;
+                            }
+                        }
+                    },
+                    datalabels: { // Konfigurasi untuk menampilkan jumlah data
+                        anchor: 'end',
+                        align: 'top',
+                        formatter: (value) => value, // Menampilkan nilai data
+                        font: {
+                            size: 12
+                        },
+                        color: '#000' // Warna label
+                    }
+                },
                 scales: {
                     y: {
                         beginAtZero: true
                     }
                 }
-            }
+            },
+            plugins: [ChartDataLabels] // Aktifkan plugin datalabels
         });
     </script>
+
     <script>
         const tpsData = @json($data['byTps']);
         const tpsLabels = tpsData.map(item => `${item.user_name}`);
@@ -230,6 +288,15 @@
                     },
                     legend: {
                         display: false // Sembunyikan legenda jika tidak diperlukan
+                    },
+                    datalabels: { // Plugin untuk menampilkan jumlah data di bar
+                        anchor: 'end',
+                        align: 'right',
+                        formatter: (value) => value, // Tampilkan nilai data
+                        color: '#000', // Warna teks
+                        font: {
+                            size: 12, // Ukuran font
+                        }
                     }
                 },
                 scales: {
@@ -240,7 +307,8 @@
                         beginAtZero: false
                     }
                 }
-            }
+            },
+            plugins: [ChartDataLabels] // Daftarkan plugin Data Labels
         });
     </script>
 @endpush
