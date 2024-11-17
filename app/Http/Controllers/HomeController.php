@@ -42,6 +42,7 @@ class HomeController extends Controller
             ->value('group_id');
         $capai = 100;
         $data['dataMasuk'] = DataDiri::count();
+        $data['totalData'] = DataDiri::count();
         $data['kecamatan'] = 24;
         $data['desa'] = 365;
         $data['progresku'] = DB::table('data_diris')->where('user_id', $user->id)->count();
