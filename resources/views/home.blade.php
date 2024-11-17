@@ -310,7 +310,7 @@
                             </div>
                         </div>
                         <p class="mt-2">
-                            Anda telah mengisi {{ $data['progresku'] }} dari {{ $data['totalData'] }} data.
+                            Anda telah mengisi {{ $data['progresku'] }} dari {{ $capai }} data.
                         </p>
                     </div>
                 </div>
