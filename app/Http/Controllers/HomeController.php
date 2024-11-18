@@ -100,8 +100,8 @@ class HomeController extends Controller
         $data = DB::table('data_diris')
             ->join('users', 'data_diris.user_id', '=', 'users.id')
             ->select(
-                'data_diris.kecamatan',
-                'data_diris.desa',
+                DB::raw("UPPER(TRIM(REPLACE(data_diris.kecamatan, ' ', ''))) as normalized_kecamatan"),
+                DB::raw("UPPER(TRIM(REPLACE(data_diris.desa, ' ', ''))) as normalized_desa"),
                 'users.name as user_name',
                 DB::raw('COUNT(data_diris.id) as total')
             )
@@ -114,10 +114,10 @@ class HomeController extends Controller
                 }
                 return $query;
             })
-            ->groupBy('data_diris.kecamatan', 'data_diris.desa', 'users.name')
-            ->orderBy('users.name', 'asc')
+            ->groupBy('normalized_kecamatan', 'normalized_desa', 'users.name')
+            ->orderByRaw('CAST(REGEXP_SUBSTR(users.name, "[0-9]+") AS UNSIGNED) ASC')
             ->get()
-            ->groupBy('desa');
+            ->groupBy('normalized_desa');
 
         return $data;
     }
